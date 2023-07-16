@@ -43,7 +43,7 @@ const PortfolioSection = () => {
             return (
               <div
                 key={index}
-                className=" max-w-[850px] shadow-lg rounded-[10px] py-[12px] px-[18px] mb-[86px] mx-auto "
+                className=" max-w-[850px] shadow-lg rounded-[6px] py-[12px] px-[18px] mb-[86px] mx-auto "
               >
                 <Image
                   className=" w-[100%] rounded-lg  hover:scale-125 transition-all duration-500 cursor-pointer z-50"
@@ -53,7 +53,7 @@ const PortfolioSection = () => {
                 <a
                   href={portfolio.link}
                   target="_blank"
-                  className=" inline-block my-[6px] underline font-[700] text-[16px] "
+                  className=" inline-block my-[12px] underline font-[700] text-[16px] "
                 >
                   {portfolio.title}
                 </a>
