@@ -17,10 +17,9 @@ module.exports = {
       gray: "#8492a6",
       "gray-light": "#d3dce6",
     },
-    width : {
-      container : "1200px"
-    }
-    ,
+    width: {
+      container: "1200px",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

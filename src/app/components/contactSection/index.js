@@ -17,7 +17,7 @@ const CONTACT = [
   {
     title: "Phone",
     icon: PhoneIcon,
-    discription: "+8360395467",
+    discription: "+91 8360395467",
   },
   {
     title: "Email",
@@ -26,32 +26,35 @@ const CONTACT = [
   },
 ];
 
-const SOCIAL_LINKS = [
+export const SOCIAL_LINKS = [
   {
+    title: "Whatsapp",
     icon: WhatsappIcon,
     link: "https://api.whatsapp.com/send?phone=918360395467",
   },
   {
+    title: "LinkedIn",
     icon: LinkedinIcon,
     link: "https://www.linkedin.com/in/akshay-kumar-a3397920a/",
   },
   {
+    title: "Github",
     icon: GithubIcon,
     link: "https://github.com/akshay3377",
   },
 ];
+
 const ContactSection = () => {
   return (
-    <section className=" w-[100%] bg-grey py-[120px]">
-      <div className=" w-[75%] flex flex-col md:flex-row   w-container  mx-auto  justify-between">
-        <div className="w-[100%] md:w-[45%]">
-          <h1 className="font-[700] text-[36px] mb-[12px]">
-            Have You Any Project? please Drop a Message
-          </h1>
-          <p className="mb-[24px]">
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
+    <section className=" w-[100%] bg-grey py-[150px]">
+      <div className=" w-[75%]  flex flex-col   md:grid grid-cols-2    mx-auto ">
+        <div className="w-[100%]  md:max-w-[500px]   ">
+          <p className="font-[700] w-[auto] text-[36px] mb-[20px] ">
+            Have You Any Project? Please Drop a Message
+          </p>
+          <p className="mb-[36px]">
+            Get in touch and let me know how i can help. Fill out the form and
+            i'll be in touch as soon as possible.
           </p>
 
           {CONTACT.map((contact, index) => {
@@ -70,13 +73,13 @@ const ContactSection = () => {
             {SOCIAL_LINKS.map((social, index) => {
               return (
                 <a href={social.link} target="_blank" key={index}>
-            {      <social.icon className="h-[40px] w-[40px]" />}
+                  {<social.icon className="h-[40px] w-[40px]" />}
                 </a>
               );
             })}
           </div>
         </div>
-        <div className="w-[100%] md:w-[45%] bg-white flex justify-center items-center py-[24px] my-[40px]">
+        <div className=" w-[100%]  md:max-w-[500px]  bg-white flex justify-center items-center py-[24px] my-[20px]">
           <ContactForm />
         </div>
       </div>
