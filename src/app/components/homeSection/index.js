@@ -7,7 +7,6 @@ import Link from "next/link";
 import Lottie from "react-lottie";
 import * as BoyAnimation from "../../../../public/animation/boy.json";
 
-
 // import audioFile from '../../../../public/audio/song.mp3';
 
 const HomeSection = () => {
@@ -15,8 +14,8 @@ const HomeSection = () => {
   const handleShow = () => setShow(!show);
 
   const defaultOptions = {
-    loop: false,
-    autoplay: false,
+    loop: true,
+    autoplay: true,
     animationData: BoyAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -24,7 +23,7 @@ const HomeSection = () => {
   };
 
   return (
-    <div className="bg-grey py-[150px] relative">
+    <div className="bg-grey py-[180px] relative">
       <div className="w-[75%] flex flex-col  md:flex-row justify-around items-center mx-auto">
         <div className=" w-[90%]  md:w-[45%]">
           <div className="  h-[250px]   md:h-[400px] flex justify-center items-center">
