@@ -32,7 +32,7 @@ const AboutUsection = () => {
           <div className="flex">
             <Button
               className={"bg-black text-white mr-[4px]"}
-              children={"Download CV"}
+              children={<s>Download CV</s>}
             />
 
             <Link href={"/contact"}>

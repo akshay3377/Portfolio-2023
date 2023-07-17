@@ -16,6 +16,8 @@ import {
   GitlabIcon,
   NPMIcon,
   SlackIcon,
+  NodejsIcon,
+  MongoDBIcon,
 } from "../child/icons";
 import Button from "../child/atom/button";
 import FigmaIcon from "../child/icons/FigmaIcon";
@@ -38,16 +40,25 @@ const SKILLS = [
     icon: ReactIcon,
   },
   {
-    title: "NEXT",
-    icon: NextjsIcon,
+    title: "MONGO DB",
+    icon: MongoDBIcon,
   },
   {
     title: "REDUX",
     icon: ReduxIcon,
   },
   {
+    title: "NEXT",
+    icon: NextjsIcon,
+  },
+
+  {
     title: "BOOTSTRAP",
     icon: BootstrapIcon,
+  },
+  {
+    title: "NODE JS",
+    icon: NodejsIcon,
   },
   {
     title: "FIREBASE",
@@ -116,14 +127,14 @@ const SkillSection = () => {
           </p>
           <div className="flex">
             <Button
-              className={item === "SKILLS" && "bg-[red] text-white "}
+              className={item === "SKILLS" && "bg-red text-white font-[700] "}
               onClick={handleSetSkills}
             >
               {"SKILLS"}
             </Button>
             <Button
               className={`${
-                item === "TOOLS" && "bg-[red] text-white "
+                item === "TOOLS" && "bg-red text-white font-[700] "
               } mx-[6px] `}
               onClick={handleSetTools}
             >
