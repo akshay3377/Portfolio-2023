@@ -14,7 +14,7 @@ const InputField = ({
   return (
     <div className=" mb-[24px]">
       <small className="font-[600]">{label}</small>
-      <div className="w-[100%]  bg-grey px-[12px] py-[8px] rounded-[8px] flex justify-center items-center">
+      <div className="w-[100%]  bg-grey px-[12px] py-[8px] rounded-[4px] flex justify-center items-center">
         <span className="mr-[8px]"> {icon}</span>
         <input
           id={name}

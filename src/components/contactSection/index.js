@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   EmailIcon,
   GithubIcon,
@@ -7,6 +10,8 @@ import {
   WhatsappIcon,
 } from "../child/icons";
 import ContactForm from "../child/molecule/form";
+import * as Giraff from "../../../public/animation/animation5.json";
+import Lottie from "react-lottie";
 
 const CONTACT = [
   {
@@ -31,20 +36,33 @@ export const SOCIAL_LINKS = [
     title: "Whatsapp",
     icon: WhatsappIcon,
     link: "https://api.whatsapp.com/send?phone=918360395467",
+    customBgColor: "bg-[green]",
   },
   {
     title: "LinkedIn",
     icon: LinkedinIcon,
     link: "https://www.linkedin.com/in/akshay-kumar-a3397920a/",
+    customBgColor: "bg-[blue]",
   },
   {
     title: "Github",
     icon: GithubIcon,
     link: "https://github.com/akshay3377",
+    customBgColor: "bg-[black]",
   },
 ];
 
 const ContactSection = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Giraff,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const [showResponse, setShowResponse] = useState(false);
   return (
     <section className=" w-[100%] bg-grey py-[150px]">
       <div className=" w-[75%]  flex flex-col   md:grid grid-cols-2    mx-auto ">
@@ -73,14 +91,23 @@ const ContactSection = () => {
             {SOCIAL_LINKS.map((social, index) => {
               return (
                 <a href={social.link} target="_blank" key={index}>
-                  {<social.icon className="h-[40px] w-[40px]" />}
+                  {<social.icon className="h-[30px] w-[30px]" />}
                 </a>
               );
             })}
           </div>
         </div>
         <div className=" w-[100%]  md:max-w-[500px]  bg-white flex justify-center items-center py-[24px] my-[20px]">
-          <ContactForm />
+          {!showResponse ? (
+            <ContactForm setState={setShowResponse} />
+          ) : (
+            <>
+              <div className="  h-[250px] md:h-[400px] flex flex-col justify-center items-center">
+                <Lottie options={defaultOptions} className="w-[100%] h-auto" />
+                <strong>Sending...</strong>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>

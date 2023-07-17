@@ -1,4 +1,5 @@
-import PortfolioSection from "../components/portfolioSection";
+import PortfolioSection from "@/components/portfolioSection";
+
 
 const Portfolio = () => {
   return (

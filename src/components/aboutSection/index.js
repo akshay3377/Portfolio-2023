@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "../child/atom/button";
-import img from "../../../../public/images/me.jpg";
+import img from "../../../public/images/me.jpg";
 import Link from "next/link";
 
 const AboutUsection = () => {
@@ -9,8 +9,8 @@ const AboutUsection = () => {
       <div className="w-[75%] mx-auto flex flex-col md:flex-row justify-around items-center ">
         <div className="w-[100%] md:w-[40%] ">
           <Image
-            key={img}
             src={img}
+            loading="lazy"
             className="h-auto w-[85%] rounded-[12px]"
             alt="profile_Picture"
           />

@@ -1,7 +1,7 @@
 "use client";
 
 import { addDoc, collection } from "firebase/firestore";
-import { databaseConnection } from "../../../../../firebaseConfig";
+
 import Button from "../atom/button";
 import InputField from "../atom/input";
 import TextField from "../atom/textarea";
@@ -15,8 +15,9 @@ import {
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { databaseConnection } from "../../../../firebaseConfig";
 
-const ContactForm = () => {
+const ContactForm = ({ setState }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -26,17 +27,21 @@ const ContactForm = () => {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = async (payload) => {
+  const onSubmit = (payload) => {
     setIsLoading(true);
-    try {
-      await addDoc(collection(databaseConnection, "response"), payload);
-      toast.success("success");
-      reset();
-    } catch (e) {
-      toast.error("error");
-    } finally {
-      setIsLoading(false);
-    }
+    setState((previous) => !previous);
+    setTimeout(async () => {
+      try {
+        await addDoc(collection(databaseConnection, "response"), payload);
+        toast.success("Sent");
+        reset();
+      } catch (e) {
+        toast.error("Error, Not sent");
+      } finally {
+        setIsLoading(false);
+        setState((pre) => !pre);
+      }
+    }, 3000);
   };
 
   return (
@@ -80,6 +85,7 @@ const ContactForm = () => {
             message: "Please enter only numbers",
           },
           minLength: { value: 10, message: "min length should be 10" },
+          maxLength: { value: 10, message: "max length should be 10" }
         })}
         errors={errors}
       />

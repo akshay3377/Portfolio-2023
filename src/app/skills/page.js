@@ -1,4 +1,5 @@
-import SkillSection from "../components/skillSection";
+import SkillSection from "@/components/skillSection";
+
 
 const Skills = () => {
   return (

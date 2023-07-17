@@ -10,7 +10,7 @@ const firebaseConfig = {
   appId: "1:787324298205:web:575be0e1e1bc7ce9340c34",
 };
 
-const app = initializeApp(firebaseConfig);
-export const databaseConnection = getFirestore(app);
+const App = initializeApp(firebaseConfig);
+export const databaseConnection = getFirestore(App);
 
 // export const postsDB = collection(databaseConnection, "response");

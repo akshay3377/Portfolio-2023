@@ -34,7 +34,7 @@ const Navbar = () => {
   const pathName = usePathname();
 
   return (
-    <nav className="bg-[white] shadow-lg fixed top-0 z-50 w-[100%]">
+    <nav className="bg-[white] shadow-lg sticky top-0 z-50 w-[100%]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -102,9 +102,12 @@ const Navbar = () => {
             return (
               <li
                 onClick={toggleMenu}
-                className={`px-[10px] w-[150px] py-[4px] mx-[12px] font-[700]  rounded-md text-black text-center  mx-auto    ${
-                  navlink.route === pathName ? "bg-black text-white" : ""
-                } `}
+                className={`px-[10px] w-[150px] py-[4px] mx-[12px] font-[700]  rounded-md  text-center  mx-auto  
+                 ${
+                   navlink.route === pathName
+                     ? "text-[black]"
+                     : "text-[#999797]"
+                 }  hover:text-[black]`}
                 key={index}
               >
                 <Link href={navlink.route}>{navlink.title}</Link>
