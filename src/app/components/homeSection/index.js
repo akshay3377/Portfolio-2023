@@ -23,7 +23,7 @@ const HomeSection = () => {
   };
 
   return (
-    <div className="bg-grey py-[180px] relative">
+    <div className="bg-grey py-[170px] relative">
       <div className="w-[75%] flex flex-col  md:flex-row justify-around items-center mx-auto">
         <div className=" w-[90%]  md:w-[45%]">
           <div className="  h-[250px]   md:h-[400px] flex justify-center items-center">
