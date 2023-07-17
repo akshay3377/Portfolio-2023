@@ -15,8 +15,8 @@ const NAV_LINKS = [
     route: "/about",
   },
   {
-    title: "Skills",
-    route: "/skills",
+    title: "Skill",
+    route: "/skill",
   },
   {
     title: "Portfolio",
@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <span className="text-black">Akshay</span>
+              <span className="text-black">Web</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -48,8 +48,10 @@ const Navbar = () => {
                 return (
                   <li
                     key={index}
-                    className={`px-[10px] py-[4px] mx-[12px] font-[700] rounded-md text-black ${
-                      navlink.route === pathName ? "bg-black text-white" : ""
+                    className={`px-[10px] py-[4px] mx-[12px]  rounded-md  ${
+                      navlink.route === pathName
+                        ? "text-[black] font-[800]"
+                        : "text-[#999797] font-[400]"
                     }   `}
                   >
                     <Link href={navlink.route}>{navlink.title}</Link>

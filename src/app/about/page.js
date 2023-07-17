@@ -1,10 +1,9 @@
-import AboutUsection from "@/components/aboutSection";
-
+import AboutSection from "@/components/about";
 
 const About = () => {
   return (
     <>
-      <AboutUsection />
+      <AboutSection />
     </>
   );
 };
