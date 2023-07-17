@@ -9,6 +9,7 @@ const AboutUsection = () => {
       <div className="w-[75%] mx-auto flex flex-col md:flex-row justify-around items-center ">
         <div className="w-[100%] md:w-[40%] ">
           <Image
+            key={img}
             src={img}
             className="h-auto w-[85%] rounded-[12px]"
             alt="profile_Picture"
