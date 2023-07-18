@@ -7,16 +7,14 @@ module.exports = {
   ],
   theme: {
     colors: {
-      red : "	#FF0000",
+      red: "	#F32013",
       white: "#ffffff",
       grey: "#f7f8fa",
+      "grey-light": "#7F7F7F",
+      blue: "#1A0DAB",
       black: "#000000",
       orange: "#ff7849",
-      gree: "#13ce66",
       yellow: "#ffc82c",
-      "gray-dark": "#273444",
-      gray: "#8492a6",
-      "gray-light": "#d3dce6",
     },
     width: {
       container: "1200px",

@@ -25,7 +25,7 @@ const InputField = ({
         />
       </div>
       {errors && (
-        <strong className="text-[red] text-[13px] block text-end ">
+        <strong className="text-red text-[13px] block text-end ">
           {errors[name]?.message}
         </strong>
       )}

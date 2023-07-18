@@ -6,6 +6,7 @@ import work2 from "../../../../public/images/work2.png";
 import work3 from "../../../../public/images/work3.png";
 import work4 from "../../../../public/images/work4.png";
 import work5 from "../../../../public/images/work5.png";
+import { motion } from "framer-motion";
 
 const PORTFOLIO = [
   {
@@ -38,35 +39,78 @@ const PORTFOLIO = [
 
 const PortfolioSection = () => {
   return (
-    <section className="w-[100%] py-[130px] bg-grey">
-      <div className="w-[75%] mx-auto">
-        <div className="mb-[64px] text-end">
-          <h1 className="font-[700] text-[36px] text-end ">
-            See My Works Which Will Amaze You!
-          </h1>
-          <span>click on link to visit project</span>
-        </div>
-
-        <div className="flex flex-col  ">
+    <section className="w-[100%] py-[100px] ">
+      <div className={"w-[75%]  mx-auto"}>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <motion.div
+            variants={{
+              offscreen: {
+                y: 100,
+                opacity: 0,
+              },
+              onscreen: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1,
+                },
+              },
+            }}
+          >
+            <div className="mb-[64px] text-end">
+              <h1 className="font-[700] text-[36px] text-end text-black ">
+                See My Works Which Will Amaze You!
+              </h1>
+              <span className="text-grey-light">
+                click on link to visit project
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
+        <div className="flex flex-col">
           {PORTFOLIO.map((portfolio, index) => {
             return (
-              <div
+              <motion.div
                 key={index}
-                className=" max-w-[850px] shadow-2xl   rounded-[6px] py-[12px] px-[18px] mb-[86px] mx-auto "
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.5 }}
               >
-                <Image
-                  className=" w-[100%]   hover:scale-125 transition-all duration-500 cursor-pointer z-50"
-                  src={portfolio.image}
-                  alt={portfolio.title}
-                />
-                <a
-                  href={portfolio.link}
-                  target="_blank"
-                  className=" inline-block my-[8px] text-[blue] underline  font-[600] text-[16px] "
+                <motion.div
+                  variants={{
+                    offscreen: {
+                      y: 160,
+                      opacity: 0,
+                    },
+                    onscreen: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        duration: 1,
+                      },
+                    },
+                  }}
                 >
-                  {portfolio.title}
-                </a>
-              </div>
+                  <div className="max-w-[850px] shadow-2xl rounded-[6px] py-[12px] px-[18px] mb-[86px] mx-auto">
+                    <Image
+                      className=" w-[100%] hover:scale-125 transition-all duration-500 cursor-pointer z-50"
+                      src={portfolio.image}
+                      alt={portfolio.title}
+                    />
+                    <a
+                      href={portfolio.link}
+                      target="_blank"
+                      className=" inline-block my-[8px] text-blue underline  font-[600] text-[16px] "
+                    >
+                      {portfolio.title}
+                    </a>
+                  </div>
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>
