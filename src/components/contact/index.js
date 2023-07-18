@@ -90,7 +90,12 @@ const ContactSection = () => {
           <div className="flex gap-3 my-[46px]">
             {SOCIAL_LINKS.map((social, index) => {
               return (
-                <a href={social.link} target="_blank" key={index}>
+                <a
+                  className=" bg-[white]  h-[40px] w-[40px] flex justify-center items-center rounded-[50%] shadow-2xl"
+                  href={social.link}
+                  target="_blank"
+                  key={index}
+                >
                   {<social.icon className="h-[30px] w-[30px]" />}
                 </a>
               );

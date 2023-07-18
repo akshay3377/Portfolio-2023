@@ -55,7 +55,7 @@ const PortfolioSection = () => {
                 <a
                   href={portfolio.link}
                   target="_blank"
-                  className=" inline-block my-[8px] text-[blue] underline  font-[700] text-[16px] "
+                  className=" inline-block my-[8px] text-[blue] underline  font-[600] text-[16px] "
                 >
                   {portfolio.title}
                 </a>

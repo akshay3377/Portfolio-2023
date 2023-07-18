@@ -1,14 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SOCIAL_LINKS } from "../contact";
 import Button from "../child/atom/button";
 import Link from "next/link";
-import AnimationWithSound from "../child/BioLottie";
+import Lottie from "react-lottie";
+import { Howl, Howler } from "howler";
+import BoyAnimation from "../../../public/animation/boy.json";
+import { MicIcon } from "../child/icons";
 
 const HomeSection = () => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(!show);
+  const [disable, setIsDisable] = useState(false);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: BoyAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const TranslatorToggle = () => {
+    setIsDisable(true);
+    let sound;
+    sound = new Howl({
+      src: ["/audio/bio.mp3"],
+      autoplay: true,
+      loop: false,
+      volume: 2.0,
+    });
+  };
 
   return (
     <div className="bg-grey py-[130px] ">
@@ -35,17 +59,21 @@ const HomeSection = () => {
           );
         })}
       </div>
-      <div className="w-[75%] flex flex-col  md:flex-row justify-around items-center mx-auto">
+      <div className="w-[75%] flex flex-col  md:flex-row justify-center items-center mx-auto">
         <div className=" w-[90%]  md:w-[45%]">
           <div className="  flex justify-center items-center">
-            <AnimationWithSound className=" h-[250px] md:h-[400px]" />
+            <div className=" h-[250px] md:h-[400px]">
+              <Lottie options={defaultOptions} className="w-[100%]" />
+            </div>
           </div>
         </div>
-        <div className=" w-[90%]  md:w-[45%] py-[36px]     ">
+        <div className=" w-[90%]  md:w-[45%] py-[36px]">
+          <button className="my-[4px]" onClick={TranslatorToggle}>
+            <MicIcon />
+          </button>
           <h1 className="font-[800] text-[24px]    md:text-[52px] mb-[2px]">
             AKSHAY KUMAR
           </h1>
-
           <p className="mb-[24px] w-full">
             <strong>FRONT-END DEVELOPER</strong> with creative designing &
             developing skills.
@@ -58,5 +86,4 @@ const HomeSection = () => {
     </div>
   );
 };
-
 export default HomeSection;

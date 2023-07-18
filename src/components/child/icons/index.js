@@ -33,3 +33,5 @@ export { default as SpinnerIcon } from "./SpinnerIcon";
 
 export { default as NodejsIcon } from "./NodejsIcon";
 export { default as MongoDBIcon } from "./MongoDBIcon";
+
+export { default as MicIcon } from "./MicIcon";

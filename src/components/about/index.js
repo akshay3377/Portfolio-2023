@@ -1,18 +1,25 @@
-import Image from "next/image";
+"use client";
+
 import Button from "../child/atom/button";
-import img from "../../../public/images/me.jpg";
 import Link from "next/link";
+import LoadingImage from "@/hook/loadingImage";
 
 const AboutSection = () => {
+  const [src, { blur }] = LoadingImage("/images/blur.avif", "/images/me.jpg");
   return (
     <section className=" w-[100%] py-[130px] bg-grey ">
       <div className="w-[75%] mx-auto flex flex-col md:flex-row justify-around items-center ">
-        <div className="w-[100%] md:w-[40%] ">
-          <Image
-            src={img}
-            loading="lazy"
-            className="h-auto w-[85%] rounded-[12px]"
-            alt="profile_Picture"
+        <div className="w-[100%] md:w-[40%] flex justify-center items-center ">
+          <img
+            src={src}
+            style={{
+              borderRadius: "12px",
+              height: "auto",
+              width: "85%",
+              filter: blur ? "blur(20px)" : "none",
+              transition: blur ? "none" : "filter 0.3s ease-out",
+            }}
+            alt="img"
           />
         </div>
         <div className=" w-[100%]  md:w-[54%]  my-[36px] ">
@@ -34,9 +41,7 @@ const AboutSection = () => {
               className={"bg-black text-white mr-[4px]"}
               children={<s>Download CV</s>}
             />
-
             <Link href={"/contact"}>
-              {" "}
               <Button>{"Contact Me"}</Button>
             </Link>
           </div>

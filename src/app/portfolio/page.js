@@ -1,6 +1,5 @@
 import PortfolioSection from "@/components/portfolio";
 
-
 const Portfolio = () => {
   return (
     <>
