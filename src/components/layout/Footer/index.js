@@ -15,7 +15,7 @@ export default function Footer() {
   const DATE = new Date().getFullYear();
   return (
     <div className="w-[100%] bg-black">
-      <div className=" w-[90%] md:w-[85%]  flex   justify-center  h-[60px]  mx-auto">
+      <div className=" w-[90%] md:w-[85%]  flex   justify-center  h-[46px]  mx-auto">
         <div className="text-center text-white flex justify-center items-center ">
           &#169; {DATE} All rights reserved.
         </div>

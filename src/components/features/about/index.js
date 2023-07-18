@@ -1,8 +1,8 @@
 "use client";
 
-import Button from "../child/atom/button";
+import Button from "../../child/atom/button";
 import Link from "next/link";
-import LoadingImage from "@/hook/loadingImage";
+import LoadingImage from "@/hooks/loadingImage";
 
 const AboutSection = () => {
   const [src, { blur }] = LoadingImage("/images/blur.avif", "/images/me.jpg");

@@ -1,4 +1,4 @@
-import PortfolioSection from "@/components/portfolio";
+import PortfolioSection from "@/components/features/portfolio";
 
 const Portfolio = () => {
   return (

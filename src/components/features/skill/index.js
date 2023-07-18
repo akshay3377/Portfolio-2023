@@ -18,9 +18,10 @@ import {
   SlackIcon,
   NodejsIcon,
   MongoDBIcon,
-} from "../child/icons";
-import Button from "../child/atom/button";
-import FigmaIcon from "../child/icons/FigmaIcon";
+  LottieIcon,
+} from "../../child/icons";
+import Button from "../../child/atom/button";
+import FigmaIcon from "../../child/icons/FigmaIcon";
 
 const SKILLS = [
   {
@@ -47,18 +48,18 @@ const SKILLS = [
     title: "REDUX",
     icon: ReduxIcon,
   },
-  {
-    title: "NEXT",
-    icon: NextjsIcon,
-  },
 
+  {
+    title: "NODE JS",
+    icon: NodejsIcon,
+  },
   {
     title: "BOOTSTRAP",
     icon: BootstrapIcon,
   },
   {
-    title: "NODE JS",
-    icon: NodejsIcon,
+    title: "NEXT",
+    icon: NextjsIcon,
   },
   {
     title: "FIREBASE",
@@ -79,6 +80,10 @@ const TOOLS = [
     title: "POST MAN",
     icon: PostmanIcon,
   },
+  {
+    title: "NPM",
+    icon: NPMIcon,
+  },
 
   {
     title: "GIT LAB",
@@ -86,8 +91,8 @@ const TOOLS = [
   },
 
   {
-    title: "NPM",
-    icon: NPMIcon,
+    title: "LOTTIE",
+    icon: LottieIcon,
   },
 
   {
@@ -150,7 +155,7 @@ const SkillSection = () => {
                 key={index}
                 className="bg-white rounded-[10%] h-[85px] w-[85px] flex justify-center shadow-md items-center"
               >
-                <skill.icon />
+                <skill.icon className="w-[70PX] h-[70PX]" />
               </div>
             );
           })}

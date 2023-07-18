@@ -8,10 +8,11 @@ import {
   LocationIcon,
   PhoneIcon,
   WhatsappIcon,
-} from "../child/icons";
-import ContactForm from "../child/molecule/form";
-import * as Giraff from "../../../public/animation/animation5.json";
+} from "../../child/icons";
+
+import Giraff from "../../../../public/animation/giraff.json";
 import Lottie from "react-lottie";
+import ContactForm from "@/components/child/molecule/form";
 
 const CONTACT = [
   {

@@ -1,31 +1,38 @@
 "use client";
 
 import Image from "next/image";
-import work1 from "../../../public/images/work1.png";
-import work2 from "../../../public/images/work2.png";
-import work3 from "../../../public/images/work3.png";
-import work4 from "../../../public/images/work4.png";
+import work1 from "../../../../public/images/work1.png";
+import work2 from "../../../../public/images/work2.png";
+import work3 from "../../../../public/images/work3.png";
+import work4 from "../../../../public/images/work4.png";
+import work5 from "../../../../public/images/work5.png";
 
 const PORTFOLIO = [
   {
     title: "Instagram Clone",
-    image: work4,
+    image: work1,
     link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
   },
   {
+    title: "Mate Cinema",
+    image: work2,
+    link: "https://matecinema.jbrocksfellas.com/",
+  },
+  {
     title: "Food order website UI",
-    image: work1,
+    image: work3,
     link: "https://food-app-xi-fawn.vercel.app/",
+  },
+
+  {
+    title: "3D website UI",
+    image: work4,
+    link: "https://3-d-app-akshaysaga777.vercel.app/",
   },
   {
     title: "Tourism website UI",
-    image: work2,
+    image: work5,
     link: "https://tourism-app-rho.vercel.app/",
-  },
-  {
-    title: "3D website UI",
-    image: work3,
-    link: "https://3-d-app-akshaysaga777.vercel.app/",
   },
 ];
 

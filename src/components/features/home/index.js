@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { SOCIAL_LINKS } from "../contact";
-import Button from "../child/atom/button";
+import {  useState } from "react";
+
+import Button from "../../child/atom/button";
 import Link from "next/link";
 import Lottie from "react-lottie";
 import { Howl, Howler } from "howler";
-import BoyAnimation from "../../../public/animation/boy.json";
-import { MicIcon } from "../child/icons";
+import BoyAnimation from "../../../../public/animation/boy.json";
+import { MicIcon } from "../../child/icons";
+import { SOCIAL_LINKS } from "../contact";
 
 const HomeSection = () => {
   const [show, setShow] = useState(false);
@@ -74,9 +75,9 @@ const HomeSection = () => {
           <h1 className="font-[800] text-[24px]    md:text-[52px] mb-[2px]">
             AKSHAY KUMAR
           </h1>
-          <p className="mb-[24px] w-full">
-            <strong>FRONT-END DEVELOPER</strong> with creative designing &
-            developing skills.
+          <p className="mb-[24px] w-full leading-[32px]">
+            <strong>FRONT-END DEVELOPER </strong>
+            with creative designing & developing skills.
           </p>
           <Link href={"/contact"}>
             <Button>{"GET IN TOUCH"}</Button>
