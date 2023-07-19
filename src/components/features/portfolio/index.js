@@ -66,7 +66,7 @@ const PortfolioSection = () => {
                 See My Works Which Will Amaze You!
               </h1>
               <span className="text-grey-light">
-                click on link to visit project
+                click on link or image to visit project
               </span>
             </div>
           </motion.div>
@@ -96,11 +96,13 @@ const PortfolioSection = () => {
                   }}
                 >
                   <div className="max-w-[850px] shadow-2xl rounded-[6px] py-[12px] px-[18px] mb-[86px] mx-auto">
-                    <Image
-                      className=" w-[100%] hover:scale-125 transition-all duration-500 cursor-pointer z-50"
-                      src={portfolio.image}
-                      alt={portfolio.title}
-                    />
+                    <a href={portfolio.link} target="_blank">
+                      <Image
+                        className=" w-[100%] hover:scale-125 transition-all duration-500 cursor-pointer z-50"
+                        src={portfolio.image}
+                        alt={portfolio.title}
+                      />
+                    </a>
                     <a
                       href={portfolio.link}
                       target="_blank"

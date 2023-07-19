@@ -7,8 +7,8 @@ const LottieIcon = () => {
       viewBox="98.93799999999999 93.09700000000007 314.945 323.4279999999999"
     >
       <linearGradient id="a" x1="0%" x2="95.632%" y1="10.304%" y2="72.462%">
-        <stop offset="0" stop-color="#2beaed" />
-        <stop offset="1" stop-color="#0fccce" />
+        <stop offset="0" stopColor="#2beaed" />
+        <stop offset="1" stopColor="#0fccce" />
       </linearGradient>
       <g fill="none">
         <rect fill="url(#a)" height="512" rx="42" width="512" />

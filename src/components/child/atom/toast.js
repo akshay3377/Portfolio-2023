@@ -2,6 +2,7 @@ import React from "react";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const MyToast = () => {
   return (
     <ToastContainer
@@ -13,6 +14,7 @@ const MyToast = () => {
       transition={Slide}
       pauseOnVisibilityChange
       pauseOnHover
+
     />
   );
 };

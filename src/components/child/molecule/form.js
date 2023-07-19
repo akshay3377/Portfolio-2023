@@ -41,7 +41,7 @@ const ContactForm = ({ setState }) => {
         setIsLoading(false);
         setState((pre) => !pre);
       }
-    }, 3000);
+    }, 2000);
   };
 
   return (
@@ -102,7 +102,7 @@ const ContactForm = ({ setState }) => {
         type="submit"
         className={"bg-black text-white w-[100%] h-[44px] my-[16px]"}
       >
-        {isLoading ? <SpinnerIcon /> : "Save"}
+        {isLoading ? <SpinnerIcon /> : "Send"}
       </Button>
     </form>
   );

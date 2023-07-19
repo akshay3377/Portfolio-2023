@@ -52,7 +52,7 @@ const Navbar = () => {
                       navlink.route === pathName
                         ? "text-[black] font-[800]"
                         : "text-[#999797] font-[400]"
-                    } hover:text-[black] hover:font-[800]   `}
+                    } hover:text-[black]    `}
                   >
                     <Link href={navlink.route}>{navlink.title}</Link>
                   </li>
