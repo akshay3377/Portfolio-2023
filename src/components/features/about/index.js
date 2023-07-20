@@ -52,8 +52,8 @@ const AboutSection = () => {
             </h1>
             <p className="mb-[32px] leading-[36px] text-grey-light">
               <strong className="text-black">Fontend developer</strong> with 2
-              years of experience in Building projects using JavaScript , React
-              js , Next js , RESTful API , Redux and Firebase. I have worked on
+              years of experience in Building projects using JavaScript, React
+              js, Next js, RESTful API, Redux and Firebase. I have worked on
               various web development project's with hands-on experience in
               frontend technologies. such as HTML, CSS, and JavaScript, as well
               as frameworks like React and Next, to build scalable and modular
