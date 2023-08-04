@@ -61,10 +61,10 @@ const AboutSection = () => {
               develop visually appealing and interactive user interfaces.
             </p>
             <div className="flex">
-              <Button
+              {/* <Button
                 className={"bg-black text-white mr-[4px]"}
                 children={<s>Download CV</s>}
-              />
+              /> */}
               <Link href={"/contact"}>
                 <Button>{"Contact Me"}</Button>
               </Link>
