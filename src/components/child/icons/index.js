@@ -29,10 +29,10 @@ export { default as SlackIcon } from "./SlackIcon";
 export { default as NPMIcon } from "./NPMicon";
 export { default as SpinnerIcon } from "./SpinnerIcon";
 
-
-
 export { default as NodejsIcon } from "./NodejsIcon";
 export { default as MongoDBIcon } from "./MongoDBIcon";
 
 export { default as MicIcon } from "./MicIcon";
 export { default as LottieIcon } from "./LottieIcon";
+
+export { default as MicPauseIcon } from "./MicPauseIcon";

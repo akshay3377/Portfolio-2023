@@ -1,15 +1,17 @@
 "use client";
 
-
 import Button from "../../child/atom/button";
 import Link from "next/link";
 import Lottie from "react-lottie";
 import { Howl } from "howler";
 import BoyAnimation from "../../../../public/animation/boy.json";
-import { MicIcon } from "../../child/icons";
+import { MicIcon, MicPauseIcon } from "../../child/icons";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const HomeSection = () => {
+  const [isPlaying, setIsPlaying] = useState(true);
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -20,7 +22,20 @@ const HomeSection = () => {
   };
 
   const TranslatorToggle = () => {
+    setIsPlaying(!isPlaying);
+
     let sound;
+    sound = new Howl({
+      src: ["/audio/bio.mp3"],
+      autoplay: true,
+      loop: false,
+      volume: 2.0,
+    });
+  };
+
+  const pauseButton = () => {
+    let sound;
+    sound.pause();
     sound = new Howl({
       src: ["/audio/bio.mp3"],
       autoplay: true,
@@ -62,9 +77,19 @@ const HomeSection = () => {
               </div>
             </div>
             <div className=" w-[90%]  md:max-w-[600px] py-[36px]">
-              <button onClick={TranslatorToggle}>
-                <MicIcon />
-              </button>
+              {isPlaying ? (
+                <>
+                  {" "}
+                  <button onClick={TranslatorToggle}>
+                    <MicIcon />
+                  </button>
+                </>
+              ) : (
+                <button onClick={pauseButton}>
+                  <MicPauseIcon />
+                </button>
+              )}
+
               <h1 className="font-[800] text-[24px] md:text-[52px] ">
                 {admin}
               </h1>
