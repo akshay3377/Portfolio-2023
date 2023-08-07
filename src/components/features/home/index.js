@@ -3,14 +3,12 @@
 import Button from "../../child/atom/button";
 import Link from "next/link";
 import Lottie from "react-lottie";
-import { Howl } from "howler";
 import BoyAnimation from "../../../../public/animation/boy.json";
-import { MicIcon, MicPauseIcon } from "../../child/icons";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import AudioPlayer from "@/components/child/atom/play";
 
 const HomeSection = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const admin = "AKSHAY KUMAR";
 
   const defaultOptions = {
     loop: true,
@@ -20,31 +18,6 @@ const HomeSection = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-
-  const TranslatorToggle = () => {
-    setIsPlaying(!isPlaying);
-
-    let sound;
-    sound = new Howl({
-      src: ["/audio/bio.mp3"],
-      autoplay: true,
-      loop: false,
-      volume: 2.0,
-    });
-  };
-
-  const pauseButton = () => {
-    let sound;
-    sound.pause();
-    sound = new Howl({
-      src: ["/audio/bio.mp3"],
-      autoplay: true,
-      loop: false,
-      volume: 2.0,
-    });
-  };
-
-  const admin = "AKSHAY KUMAR";
 
   return (
     <section className=" w-[100%] py-[100px]  ">
@@ -77,19 +50,7 @@ const HomeSection = () => {
               </div>
             </div>
             <div className=" w-[90%]  md:max-w-[600px] py-[36px]">
-              {isPlaying ? (
-                <>
-                  {" "}
-                  <button onClick={TranslatorToggle}>
-                    <MicIcon />
-                  </button>
-                </>
-              ) : (
-                <button onClick={pauseButton}>
-                  <MicPauseIcon />
-                </button>
-              )}
-
+              <AudioPlayer src={"/audio/bio.mp3"} />
               <h1 className="font-[800] text-[24px] md:text-[52px] ">
                 {admin}
               </h1>

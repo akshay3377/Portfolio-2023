@@ -20,104 +20,104 @@ import {
   MongoDBIcon,
   LottieIcon,
 } from "../../child/icons";
-import Button from "../../child/atom/button";
 import FigmaIcon from "../../child/icons/FigmaIcon";
 import { motion } from "framer-motion";
+import Button from "@/components/child/atom/button";
 
-const SKILLS = [
+const data = [
   {
-    title: "HTML",
-    icon: HtmlIcon,
-  },
-  {
-    title: "CSS",
-    icon: CssIcon,
-  },
-  {
-    title: "JAVASCRIPT",
-    icon: JavaScriptIcon,
-  },
-  {
-    title: "REACT",
-    icon: ReactIcon,
-  },
-  {
-    title: "MONGO DB",
-    icon: MongoDBIcon,
-  },
-  {
-    title: "REDUX",
-    icon: ReduxIcon,
-  },
+    id: 1,
+    title: "SKILLS",
+    results: [
+      {
+        title: "HTML",
+        icon: HtmlIcon,
+      },
+      {
+        title: "CSS",
+        icon: CssIcon,
+      },
+      {
+        title: "JAVASCRIPT",
+        icon: JavaScriptIcon,
+      },
+      {
+        title: "REACT",
+        icon: ReactIcon,
+      },
+      {
+        title: "MONGO DB",
+        icon: MongoDBIcon,
+      },
+      {
+        title: "REDUX",
+        icon: ReduxIcon,
+      },
 
-  {
-    title: "NODE JS",
-    icon: NodejsIcon,
+      {
+        title: "NODE JS",
+        icon: NodejsIcon,
+      },
+      {
+        title: "BOOTSTRAP",
+        icon: BootstrapIcon,
+      },
+      {
+        title: "NEXT",
+        icon: NextjsIcon,
+      },
+      {
+        title: "FIREBASE",
+        icon: FirebaseIcon,
+      },
+    ],
   },
   {
-    title: "BOOTSTRAP",
-    icon: BootstrapIcon,
-  },
-  {
-    title: "NEXT",
-    icon: NextjsIcon,
-  },
-  {
-    title: "FIREBASE",
-    icon: FirebaseIcon,
-  },
-];
+    id: 2,
+    title: "TOOLS",
+    results: [
+      {
+        title: "VS CODE",
+        icon: VSCodeIcon,
+      },
+      {
+        title: "GIT",
+        icon: GitIcon,
+      },
+      {
+        title: "POST MAN",
+        icon: PostmanIcon,
+      },
+      {
+        title: "NPM",
+        icon: NPMIcon,
+      },
 
-const TOOLS = [
-  {
-    title: "VS CODE",
-    icon: VSCodeIcon,
-  },
-  {
-    title: "GIT",
-    icon: GitIcon,
-  },
-  {
-    title: "POST MAN",
-    icon: PostmanIcon,
-  },
-  {
-    title: "NPM",
-    icon: NPMIcon,
-  },
+      {
+        title: "GIT LAB",
+        icon: GitlabIcon,
+      },
 
-  {
-    title: "GIT LAB",
-    icon: GitlabIcon,
-  },
+      {
+        title: "LOTTIE",
+        icon: LottieIcon,
+      },
 
-  {
-    title: "LOTTIE",
-    icon: LottieIcon,
-  },
-
-  {
-    title: "SLACK",
-    icon: SlackIcon,
-  },
-  {
-    title: "FIGMA",
-    icon: FigmaIcon,
+      {
+        title: "SLACK",
+        icon: SlackIcon,
+      },
+      {
+        title: "FIGMA",
+        icon: FigmaIcon,
+      },
+    ],
   },
 ];
 
 const SkillSection = () => {
-  const [data, setData] = useState(SKILLS);
-  const [item, setItem] = useState("SKILLS");
-
-  const handleSetSkills = () => {
-    setData(SKILLS);
-    setItem("SKILLS");
-  };
-  const handleSetTools = () => {
-    setData(TOOLS);
-    setItem("TOOLS");
-  };
+  const [selectedDiv, setSelectedDiv] = useState(data[0].id);
+  const handleSelect = (id) => setSelectedDiv(id);
 
   return (
     <section className=" w-[100%] py-[100px]">
@@ -152,36 +152,39 @@ const SkillSection = () => {
                 those technologies.
               </p>
               <div className="flex">
-                <Button
-                  className={
-                    item === "SKILLS" && "bg-red text-white font-[700] "
-                  }
-                  onClick={handleSetSkills}
-                >
-                  {"SKILLS"}
-                </Button>
-                <Button
-                  className={`${
-                    item === "TOOLS" && "bg-red text-white font-[700] "
-                  } mx-[6px] `}
-                  onClick={handleSetTools}
-                >
-                  {"TOOLS"}
-                </Button>
+                {data.map((item, index) => {
+                  return (
+                    <Button
+                      className={`${
+                        item.id === selectedDiv
+                          ? "bg-red text-white font-[700]"
+                          : ""
+                      } mr-[4px] `}
+                      onClick={() => handleSelect(item.id)}
+                      key={index}
+                    >
+                      {item.title}
+                    </Button>
+                  );
+                })}
               </div>
             </div>
 
             <div className="w-[100%] md:w-[50%] my-[46px] flex flex-wrap  justify-start  md:justify-center items-center gap-4 md:gap-5">
-              {data?.map((skill, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="bg-white rounded-[10%] h-[85px] w-[85px] flex justify-center shadow-md items-center"
-                  >
-                    <skill.icon className="w-[70PX] h-[70PX]" />
-                  </div>
-                );
-              })}
+              {selectedDiv !== null && (
+                <>
+                  {data[selectedDiv - 1].results.map((skill, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="bg-white rounded-[10%] h-[85px] w-[85px] flex justify-center shadow-md items-center"
+                      >
+                        <skill.icon className="w-[70PX] h-[70PX]" />
+                      </div>
+                    );
+                  })}
+                </>
+              )}
             </div>
           </div>
         </motion.div>

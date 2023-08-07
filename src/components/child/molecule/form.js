@@ -1,7 +1,6 @@
 "use client";
 
 import { addDoc, collection } from "firebase/firestore";
-
 import Button from "../atom/button";
 import InputField from "../atom/input";
 import TextField from "../atom/textarea";

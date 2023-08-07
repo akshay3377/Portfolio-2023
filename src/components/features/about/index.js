@@ -37,9 +37,9 @@ const AboutSection = () => {
             <img
               src={src}
               style={{
-                borderRadius: "12px",
+                borderRadius: "62% 38% 64% 36% / 49% 61% 39% 51% ",
                 height: "auto",
-                width: "75%",
+                width: "80%",
                 filter: blur ? "blur(20px)" : "none",
                 transition: blur ? "none" : "filter 0.3s ease-out",
               }}
