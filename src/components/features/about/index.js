@@ -30,7 +30,7 @@ const AboutSection = () => {
             },
           }}
           className={
-            "w-[75%] mx-auto flex flex-col md:flex-row justify-around items-center"
+            "w-[75%] mx-auto flex flex-col lg:flex-row justify-around items-center"
           }
         >
           <div className="w-[100%] md:w-[40%] flex justify-center items-center ">
@@ -46,7 +46,7 @@ const AboutSection = () => {
               alt="profile_pic"
             />
           </div>
-          <div className=" w-[100%]  md:w-[54%]  my-[36px] ">
+          <div className=" w-[100%]  md:w-[65%]  my-[36px] ">
             <h1 className="font-[700] text-[36px] mb-[16px]">
               About me, What My Programming skills.
             </h1>
@@ -61,10 +61,6 @@ const AboutSection = () => {
               develop visually appealing and interactive user interfaces.
             </p>
             <div className="flex">
-              {/* <Button
-                className={"bg-black text-white mr-[4px]"}
-                children={<s>Download CV</s>}
-              /> */}
               <Link href={"/contact"}>
                 <Button>{"Contact Me"}</Button>
               </Link>

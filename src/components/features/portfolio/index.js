@@ -7,37 +7,63 @@ import work3 from "../../../../public/images/work3.png";
 import work4 from "../../../../public/images/work4.png";
 import work5 from "../../../../public/images/work5.png";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import Select from "react-select";
 
-const PORTFOLIO = [
+const data = [
   {
-    title: "Instagram Clone",
-    image: work1,
-    link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
+    id: 1,
+    value: "Designing",
+    label: "Designing",
+    results: [
+      {
+        title: "Food order website UI",
+        image: work3,
+        link: "https://food-app-xi-fawn.vercel.app/",
+      },
+      {
+        title: "3D website UI",
+        image: work4,
+        link: "https://3-d-app-akshaysaga777.vercel.app/",
+      },
+      {
+        title: "Tourism website UI",
+        image: work5,
+        link: "https://tourism-app-rho.vercel.app/",
+      },
+    ],
   },
   {
-    title: "Mate Cinema",
-    image: work2,
-    link: "https://matecinema.jbrocksfellas.com/",
-  },
-  {
-    title: "Food order website UI",
-    image: work3,
-    link: "https://food-app-xi-fawn.vercel.app/",
-  },
+    id: 2,
+    value: "Functionality",
+    label: "Functionality",
 
-  {
-    title: "3D website UI",
-    image: work4,
-    link: "https://3-d-app-akshaysaga777.vercel.app/",
-  },
-  {
-    title: "Tourism website UI",
-    image: work5,
-    link: "https://tourism-app-rho.vercel.app/",
+    results: [
+      {
+        title: "Instagram Clone",
+        image: work1,
+        link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
+      },
+      {
+        title: "Mate Cinema",
+        image: work2,
+        link: "https://matecinema.jbrocksfellas.com/",
+      },
+    ],
   },
 ];
 
 const PortfolioSection = () => {
+  const [portfolioType, setPortfolioType] = useState([]);
+  const handleChangePortfolioType = (selectedOption) =>
+    setPortfolioType(selectedOption.results);
+
+  // const handleChangePortfolioType = (e) => {
+  //   console.log(e.target.value);
+  //   const filteredResult = data.filter((item) => item.type === e.target.value);
+  //   setPortfolioType(filteredResult[0]?.results);
+  // };
+
   return (
     <section className="w-[100%] py-[100px] ">
       <div className={"w-[75%]  mx-auto"}>
@@ -61,18 +87,27 @@ const PortfolioSection = () => {
               },
             }}
           >
-            <div className="mb-[64px] text-end">
+            <div className="mb-[80px] text-end">
               <h1 className="font-[700] text-[36px] text-end text-black ">
                 See My Works Which Will Amaze You!
               </h1>
               <span className="text-grey-light">
-                click on link or image to visit project
+                Click on image to visit project.
               </span>
+            </div>
+            <div className="my-[40px]  w-[300px] mx-auto text-center">
+              <Select
+                placeholder="Select Portfolio Type"
+                isSearchable={false}
+                defaultValue={portfolioType}
+                onChange={handleChangePortfolioType}
+                options={data}
+              />
             </div>
           </motion.div>
         </motion.div>
         <div className="flex flex-col">
-          {PORTFOLIO.map((portfolio, index) => {
+          {portfolioType?.map((portfolio, index) => {
             return (
               <motion.div
                 key={index}
@@ -106,7 +141,7 @@ const PortfolioSection = () => {
                     <a
                       href={portfolio.link}
                       target="_blank"
-                      className=" inline-block my-[8px] text-blue underline  font-[600] text-[16px] "
+                      className=" inline-block my-[8px] text-blue underline font-[600] text-[16px] "
                     >
                       {portfolio.title}
                     </a>
