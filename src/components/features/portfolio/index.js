@@ -37,17 +37,23 @@ const data = [
     id: 2,
     value: "Functionality",
     label: "Functionality",
-
+    results: [
+      {
+        title: "Mate Cinema",
+        image: work2,
+        link: "https://matecinema.jbrocksfellas.com/",
+      },
+    ],
+  },
+  {
+    id: 3,
+    value: "Authentication",
+    label: "Authentication",
     results: [
       {
         title: "Instagram Clone",
         image: work1,
         link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
-      },
-      {
-        title: "Mate Cinema",
-        image: work2,
-        link: "https://matecinema.jbrocksfellas.com/",
       },
     ],
   },
@@ -63,6 +69,22 @@ const PortfolioSection = () => {
   //   const filteredResult = data.filter((item) => item.type === e.target.value);
   //   setPortfolioType(filteredResult[0]?.results);
   // };
+
+  const customStyles = {
+    control: (base, state) => ({
+      ...base,
+      boxShadow: state.isFocused ? 0 : base.boxShadow, // Remove box shadow on focus
+      borderColor: state.isFocused ? "#ccc" : base.borderColor, // Change border color on focus
+      "&:hover": {
+        borderColor: state.isFocused ? "#ccc" : base.borderColor, // Change border color on hover
+      },
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      color: state.isSelected ? "white" : "black", // Change selected item color
+      backgroundColor: state.isSelected ? "black" : "white", // Change background color for selected item
+    }),
+  };
 
   return (
     <section className="w-[100%] py-[100px] ">
@@ -97,6 +119,7 @@ const PortfolioSection = () => {
             </div>
             <div className="my-[40px]  w-[300px] mx-auto text-center">
               <Select
+                styles={customStyles}
                 placeholder="Select Portfolio Type"
                 isSearchable={false}
                 defaultValue={portfolioType}

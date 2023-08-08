@@ -2,8 +2,8 @@ import * as React from "react";
 const MicPauseIcon = (props) => (
   <svg
     width="28px"
-    height="28px"
-    viewBox="0 0 24 24"
+    height="24px"
+    viewBox="0 0 28 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
