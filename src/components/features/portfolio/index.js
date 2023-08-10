@@ -8,68 +8,67 @@ import work4 from "../../../../public/images/work4.png";
 import work5 from "../../../../public/images/work5.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Select from "react-select";
 import RadioButton from "@/components/child/atom/radioButton";
 
 const data = [
   {
-    id: 1,
     value: "Designing",
-    label: "Designing",
-    results: [
-      {
-        title: "Food order website UI",
-        image: work3,
-        link: "https://food-app-xi-fawn.vercel.app/",
-      },
-      {
-        title: "3D website UI",
-        image: work4,
-        link: "https://3-d-app-akshaysaga777.vercel.app/",
-      },
-      {
-        title: "Tourism website UI",
-        image: work5,
-        link: "https://tourism-app-rho.vercel.app/",
-      },
-    ],
+    results: {
+      title: "Food order website UI",
+      image: work3,
+      link: "https://food-app-xi-fawn.vercel.app/",
+    },
   },
   {
-    id: 2,
+    value: "Designing",
+    results: {
+      title: "3D website UI",
+      image: work4,
+      link: "https://3-d-app-akshaysaga777.vercel.app/",
+    },
+  },
+  {
+    value: "Designing",
+    results: {
+      title: "Tourism website UI",
+      image: work5,
+      link: "https://tourism-app-rho.vercel.app/",
+    },
+  },
+
+  {
     value: "Functionality",
-    label: "Functionality",
-    results: [
-      {
-        title: "Mate Cinema",
-        image: work2,
-        link: "https://matecinema.jbrocksfellas.com/",
-      },
-    ],
+    results: {
+      title: "Mate Cinema",
+      image: work2,
+      link: "https://matecinema.jbrocksfellas.com/",
+    },
   },
   {
-    id: 3,
+    id: 5,
     value: "Authentication",
-    label: "Authentication",
-    results: [
-      {
-        title: "Instagram Clone",
-        image: work1,
-        link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
-      },
-    ],
+    results: {
+      title: "Instagram Clone",
+      image: work1,
+      link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
+    },
   },
 ];
 
 const PortfolioSection = () => {
-  const [portfolioType, setPortfolioType] = useState(data[0].results);
-
-  const [selectedOption, setSelectedOption] = useState(data[0].value);
+  const [portfolioType, setPortfolioType] = useState(data);
+  const [selectedOption, setSelectedOption] = useState("All");
 
   const handleRadioChange = (option) => {
-    setSelectedOption(option);
-
-    const find = data.find((item) => item.value === option);
-    setPortfolioType(find?.results);
+    if (option === "All") {
+      const find = data?.filter((item) => item.value !== "All");
+      setSelectedOption(option);
+      setPortfolioType(find);
+    } else {
+      setSelectedOption(option);
+      const find = data.filter((item) => item.value === option);
+      setPortfolioType(find);
+    }
   };
 
   return (
@@ -103,16 +102,21 @@ const PortfolioSection = () => {
                 Click on image to visit project.
               </span>
             </div>
-            <div className="my-[40px]  w-[300px] mx-auto text-center">
+            <div className=" flex flex-wrap justify-center items-center   gap-3 mb-[36px] ">
               <RadioButton
-                label="Designing"
-                checked={selectedOption === "Designing"}
-                onChange={() => handleRadioChange("Designing")}
+                label="All"
+                checked={selectedOption === "All"}
+                onChange={() => handleRadioChange("All")}
               />
               <RadioButton
                 label="Functionality"
                 checked={selectedOption === "Functionality"}
                 onChange={() => handleRadioChange("Functionality")}
+              />
+              <RadioButton
+                label="Designing"
+                checked={selectedOption === "Designing"}
+                onChange={() => handleRadioChange("Designing")}
               />
               <RadioButton
                 label="Authentication"
@@ -150,16 +154,16 @@ const PortfolioSection = () => {
                     <a href={portfolio.link} target="_blank">
                       <Image
                         className=" w-[100%] hover:scale-125 transition-all duration-500 cursor-pointer z-50"
-                        src={portfolio.image}
-                        alt={portfolio.title}
+                        src={portfolio?.results?.image}
+                        alt={portfolio?.results?.title}
                       />
                     </a>
                     <a
-                      href={portfolio.link}
+                      href={portfolio?.results?.link}
                       target="_blank"
                       className=" inline-block my-[8px] text-blue underline font-[600] text-[16px] "
                     >
-                      {portfolio.title}
+                      {portfolio?.results?.title}
                     </a>
                   </div>
                 </motion.div>
