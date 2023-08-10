@@ -9,6 +9,7 @@ import work5 from "../../../../public/images/work5.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Select from "react-select";
+import RadioButton from "@/components/child/atom/radioButton";
 
 const data = [
   {
@@ -60,30 +61,15 @@ const data = [
 ];
 
 const PortfolioSection = () => {
-  const [portfolioType, setPortfolioType] = useState([]);
-  const handleChangePortfolioType = (selectedOption) =>
-    setPortfolioType(selectedOption.results);
+  const [portfolioType, setPortfolioType] = useState(data[0].results);
 
-  // const handleChangePortfolioType = (e) => {
-  //   console.log(e.target.value);
-  //   const filteredResult = data.filter((item) => item.type === e.target.value);
-  //   setPortfolioType(filteredResult[0]?.results);
-  // };
+  const [selectedOption, setSelectedOption] = useState(data[0].value);
 
-  const customStyles = {
-    control: (base, state) => ({
-      ...base,
-      boxShadow: state.isFocused ? 0 : base.boxShadow, // Remove box shadow on focus
-      borderColor: state.isFocused ? "#ccc" : base.borderColor, // Change border color on focus
-      "&:hover": {
-        borderColor: state.isFocused ? "#ccc" : base.borderColor, // Change border color on hover
-      },
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      color: state.isSelected ? "white" : "black", // Change selected item color
-      backgroundColor: state.isSelected ? "black" : "white", // Change background color for selected item
-    }),
+  const handleRadioChange = (option) => {
+    setSelectedOption(option);
+
+    const find = data.find((item) => item.value === option);
+    setPortfolioType(find?.results);
   };
 
   return (
@@ -118,13 +104,20 @@ const PortfolioSection = () => {
               </span>
             </div>
             <div className="my-[40px]  w-[300px] mx-auto text-center">
-              <Select
-                styles={customStyles}
-                placeholder="Select Portfolio Type"
-                isSearchable={false}
-                defaultValue={portfolioType}
-                onChange={handleChangePortfolioType}
-                options={data}
+              <RadioButton
+                label="Designing"
+                checked={selectedOption === "Designing"}
+                onChange={() => handleRadioChange("Designing")}
+              />
+              <RadioButton
+                label="Functionality"
+                checked={selectedOption === "Functionality"}
+                onChange={() => handleRadioChange("Functionality")}
+              />
+              <RadioButton
+                label="Authentication"
+                checked={selectedOption === "Authentication"}
+                onChange={() => handleRadioChange("Authentication")}
               />
             </div>
           </motion.div>
