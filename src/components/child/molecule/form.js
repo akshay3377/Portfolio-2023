@@ -32,15 +32,15 @@ const ContactForm = ({ setState }) => {
     setTimeout(async () => {
       try {
         await addDoc(collection(databaseConnection, "response"), payload);
-        toast.success("Sent");
+        toast.success("Response sent successfully");
         reset();
       } catch (e) {
-        toast.error("Error, Not sent");
+        toast.error("Error");
       } finally {
         setIsLoading(false);
         setState((pre) => !pre);
       }
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -84,7 +84,7 @@ const ContactForm = ({ setState }) => {
             message: "Please enter only numbers",
           },
           minLength: { value: 10, message: "min length should be 10" },
-          maxLength: { value: 10, message: "max length should be 10" }
+          maxLength: { value: 10, message: "max length should be 10" },
         })}
         errors={errors}
       />

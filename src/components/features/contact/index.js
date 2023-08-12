@@ -14,7 +14,6 @@ import Lottie from "react-lottie";
 import ContactForm from "@/components/child/molecule/form";
 import { motion } from "framer-motion";
 
-
 const CONTACT = [
   {
     title: "Address",
@@ -68,9 +67,6 @@ const ContactSection = () => {
 
   return (
     <section className=" w-[100%]  py-[100px]">
-      <div onClick={()=>{
-
-      }}>akshay</div>
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

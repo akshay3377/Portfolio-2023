@@ -141,7 +141,7 @@ const SkillSection = () => {
             },
           }}
         >
-          <div className="w-[75%] mx-auto flex flex-col  md:flex-row justify-around py-[65px] ">
+          <div className="w-[75%] mx-auto flex flex-col my-[36px]  md:flex-row justify-around  ">
             <div className=" w-[100%]  md:w-[40%]">
               <h1 className="font-[700] text-[36px] text-black mb-[12px]">
                 What My Programming Skills Included?

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -33,8 +33,29 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const pathName = usePathname();
 
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-[white] shadow-lg sticky top-0 z-50 w-[100%]">
+    <nav
+      className={` ${
+        scrolled ? "shadow-lg" : ""
+      } bg-grey sticky top-0 z-50 w-[100%]`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
