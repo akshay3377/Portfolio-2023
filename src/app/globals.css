@@ -27,7 +27,6 @@ body {
     )rgb(var(--background-start-rgb)); */
   /* background-color: red; */
 }
-
 html {
   scroll-behavior: smooth;
 }
