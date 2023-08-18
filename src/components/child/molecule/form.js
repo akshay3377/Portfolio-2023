@@ -40,7 +40,7 @@ const ContactForm = ({ setState }) => {
         setIsLoading(false);
         setState((pre) => !pre);
       }
-    }, 1000);
+    }, 2000);
   };
 
   return (
