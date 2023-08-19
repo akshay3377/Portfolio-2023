@@ -4,6 +4,7 @@ import React from "react";
 
 const InputField = ({
   name,
+  onInput,
   label,
   type,
   icon,
@@ -11,24 +12,27 @@ const InputField = ({
   register,
   errors,
 }) => {
+  const showError = errors && errors[name];
+
   return (
-    <div className=" mb-[24px]">
-      <small className="font-[600]">{label}</small>
-      <div className="w-[100%]  bg-grey px-[12px] py-[8px] rounded-[4px] flex justify-center items-center">
-        <span className="mr-[8px]"> {icon}</span>
+    <div className="mb-[32px]">
+      <small className="font-semibold">{label}</small>
+      <div className="relative bg-grey px-3 py-2 rounded-md flex items-center">
+        <span className="mr-2">{icon}</span>
         <input
+          onInput={onInput}
           id={name}
           {...register}
-          className="outline-none w-[100%] bg-grey"
+          className="outline-none bg-grey flex-1 "
           type={type}
           placeholder={placeholder}
         />
+        {showError && (
+          <strong className="absolute bottom-[-20px] left-0 text-red text-[12px]">
+            {errors[name]?.message}
+          </strong>
+        )}
       </div>
-      {errors && (
-        <strong className="text-red text-[13px] block text-end ">
-          {errors[name]?.message}
-        </strong>
-      )}
     </div>
   );
 };

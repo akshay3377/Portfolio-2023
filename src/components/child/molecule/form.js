@@ -43,6 +43,9 @@ const ContactForm = ({ setState }) => {
     }, 2000);
   };
 
+  const handleInputChange = (e) =>
+    (e.target.value = e.target.value.replace(/\D/g, ""));
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-[90%] mx-auto">
       <InputField
@@ -70,22 +73,20 @@ const ContactForm = ({ setState }) => {
         })}
         errors={errors}
       />
+     
 
       <InputField
         name="phone"
         icon={<PhoneIcon />}
         label={"Phone"}
         placeholder={"Enter Phone number"}
-        type="number"
+        type="text"
         register={register("phone", {
           required: "phone  is required",
-          pattern: {
-            value: /^[0-9]*$/,
-            message: "Please enter only numbers",
-          },
           minLength: { value: 10, message: "min length should be 10" },
           maxLength: { value: 10, message: "max length should be 10" },
         })}
+        onInput={handleInputChange}
         errors={errors}
       />
 

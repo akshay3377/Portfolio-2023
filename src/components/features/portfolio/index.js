@@ -8,9 +8,8 @@ import work4 from "../../../../public/images/work4.png";
 import work5 from "../../../../public/images/work5.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import RadioButton from "@/components/child/atom/radioButton";
 
-const data = [
+const DATA = [
   {
     value: "Designing",
     results: {
@@ -55,20 +54,23 @@ const data = [
   },
 ];
 
+const uniqueObjects = [];
+
+DATA.forEach((obj) => {
+  const existingObject = uniqueObjects.find(
+    (uniqueObj) => uniqueObj.value === obj.value
+  );
+  if (!existingObject) uniqueObjects.push(obj);
+});
+
 const PortfolioSection = () => {
-  const [portfolioType, setPortfolioType] = useState(data);
-  const [selectedOption, setSelectedOption] = useState("All");
+  const [portfolioType, setPortfolioType] = useState(DATA);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const handleRadioChange = (option) => {
-    if (option === "All") {
-      const find = data?.filter((item) => item.value !== "All");
-      setSelectedOption(option);
-      setPortfolioType(find);
-    } else {
-      setSelectedOption(option);
-      const find = data.filter((item) => item.value === option);
-      setPortfolioType(find);
-    }
+    setSelectedOption(option);
+    const find = DATA.filter((item) => item.value === option);
+    setPortfolioType(find);
   };
 
   return (
@@ -102,27 +104,22 @@ const PortfolioSection = () => {
                 Click on image to visit project.
               </span>
             </div>
-            <div className=" flex flex-wrap justify-center items-center   gap-3 mb-[36px] ">
-              <RadioButton
-                label="All"
-                checked={selectedOption === "All"}
-                onChange={() => handleRadioChange("All")}
-              />
-              <RadioButton
-                label="Functionality"
-                checked={selectedOption === "Functionality"}
-                onChange={() => handleRadioChange("Functionality")}
-              />
-              <RadioButton
-                label="Designing"
-                checked={selectedOption === "Designing"}
-                onChange={() => handleRadioChange("Designing")}
-              />
-              <RadioButton
-                label="Authentication"
-                checked={selectedOption === "Authentication"}
-                onChange={() => handleRadioChange("Authentication")}
-              />
+            <div className=" flex flex-wrap justify-center items-center   gap-4 mb-[36px] ">
+              {uniqueObjects.map((item, index) => {
+                return (
+                  <div
+                    className={`p-4 shadow rounded cursor-pointer ${
+                      selectedOption === item.value ? "bg-black text-white" : ""
+                    }  `}
+                    key={index}
+                    onClick={() => {
+                      handleRadioChange(item.value);
+                    }}
+                  >
+                    {item.value}
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </motion.div>
