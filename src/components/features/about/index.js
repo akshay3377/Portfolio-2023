@@ -5,8 +5,11 @@ import Link from "next/link";
 import LoadingImage from "@/hooks/loadingImage";
 import { motion } from "framer-motion";
 
+const AboutProfilePic = "/images/me.jpg";
+const LoadingBlurImage = "/images/blur.avif";
+
 const AboutSection = () => {
-  const [src, { blur }] = LoadingImage("/images/blur.avif", "/images/me.jpg");
+  const [src, { blur }] = LoadingImage(LoadingBlurImage, AboutProfilePic);
   return (
     <section className=" w-[100%] py-[100px] ">
       <motion.div
@@ -60,11 +63,9 @@ const AboutSection = () => {
               applications, crafting clean and semantically structured code to
               develop visually appealing and interactive user interfaces.
             </p>
-            <div className="flex">
-              <Link href={"/contact"}>
-                <Button>{"Contact Me"}</Button>
-              </Link>
-            </div>
+            <Link href={"/contact"}>
+              <Button>{"Contact Me"}</Button>
+            </Link>
           </div>
         </motion.div>
       </motion.div>

@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBGKV1ZRG-VZ6BIJy8SMWfJsw7h2J-Uc08",
-  authDomain: "portfilio-web.firebaseapp.com",
-  projectId: "portfilio-web",
-  storageBucket: "portfilio-web.appspot.com",
-  messagingSenderId: "787324298205",
-  appId: "1:787324298205:web:575be0e1e1bc7ce9340c34",
+  apiKey: "AIzaSyB5YuJCt7U_jZEDABOZTfWpHfyjn4BSoDA",
+  authDomain: "portfilio-nextjs.firebaseapp.com",
+  projectId: "portfilio-nextjs",
+  storageBucket: "portfilio-nextjs.appspot.com",
+  messagingSenderId: "258707616929",
+  appId: "1:258707616929:web:187837f9bdb34074d22ce0",
 };
 
 const App = initializeApp(firebaseConfig);

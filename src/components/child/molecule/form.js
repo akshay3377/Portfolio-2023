@@ -4,6 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import Button from "../atom/button";
 import InputField from "../atom/input";
 import TextField from "../atom/textarea";
+import emailjs from "@emailjs/browser";
 import {
   EmailIcon,
   PhoneIcon,
@@ -26,21 +27,30 @@ const ContactForm = ({ setState }) => {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = (payload) => {
+  const onSubmit = async (payload, e) => {
     setIsLoading(true);
     setState((previous) => !previous);
-    setTimeout(async () => {
-      try {
-        await addDoc(collection(databaseConnection, "response"), payload);
-        toast.success("Response sent successfully");
-        reset();
-      } catch (e) {
-        toast.error("Error");
-      } finally {
-        setIsLoading(false);
-        setState((pre) => !pre);
-      }
-    }, 2000);
+    try {
+      const firebase = await addDoc(
+        collection(databaseConnection, "response"),
+        { ...payload }
+      );
+
+      const Email = await emailjs.sendForm(
+        "service_629f2nm",
+        "template_m1vpz6t",
+        e.target,
+        "vKKoec85US-oDv-uP"
+      );
+
+      toast.success("Response sent successfully");
+      reset();
+    } catch (error) {
+      toast.error("Sorry, Error");
+    } finally {
+      setIsLoading(false);
+      setState((previous) => !previous);
+    }
   };
 
   const handleInputChange = (e) =>
@@ -73,7 +83,6 @@ const ContactForm = ({ setState }) => {
         })}
         errors={errors}
       />
-     
 
       <InputField
         name="phone"

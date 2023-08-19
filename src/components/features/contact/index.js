@@ -131,15 +131,10 @@ const ContactSection = () => {
             {!showResponse ? (
               <ContactForm setState={setShowResponse} />
             ) : (
-              <>
-                <div className="  h-[250px] md:h-[400px] flex flex-col justify-center items-center">
-                  <Lottie
-                    options={defaultOptions}
-                    className="w-[100%] h-auto"
-                  />
-                  <strong>Sending...</strong>
-                </div>
-              </>
+              <div className="  h-[250px] md:h-[400px] flex flex-col justify-center items-center">
+                <Lottie options={defaultOptions} className="w-[100%] h-auto" />
+                <strong>Sending...</strong>
+              </div>
             )}
           </div>
         </motion.div>
