@@ -15,22 +15,25 @@ const InputField = ({
   const showError = errors && errors[name];
 
   return (
-    <div className="mb-[32px]">
-      <small className="font-semibold">{label}</small>
-      <div className="relative bg-grey px-3 py-2 rounded-md flex items-center">
-        <span className="mr-2">{icon}</span>
+    <div className="mb-[28px]">
+      <small className="font-semibold inline-block mb-[8px]">{label}</small>
+      <div
+        className={`relative bg-grey ${showError && "border border-red"} px-3 py-2 rounded-sm flex items-center mb-[32px]`}
+      >
+        <span className="mr-2 ">{icon}</span>
         <input
           onInput={onInput}
           id={name}
           {...register}
-          className="outline-none bg-grey flex-1 "
+          className="outline-none bg-grey w-full text-black "
           type={type}
           placeholder={placeholder}
         />
+
         {showError && (
-          <strong className="absolute bottom-[-20px] left-0 text-red text-[12px]">
+          <div className="absolute bottom-[-25px] left-0 text-red text-[12px]">
             {errors[name]?.message}
-          </strong>
+          </div>
         )}
       </div>
     </div>

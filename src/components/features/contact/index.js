@@ -66,7 +66,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className=" w-[100%]  py-[100px]">
+    <section className=" w-[100%]  ">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -87,10 +87,12 @@ const ContactSection = () => {
               },
             },
           }}
-          className={"w-[75%]  flex flex-col   md:grid grid-cols-2    mx-auto"}
+          className={
+            "max-w-[1200px]  flex  flex-col    justify-around p-4  md:flex-row   mx-auto"
+          }
         >
-          <div className="w-[100%]  md:max-w-[500px]   ">
-            <p className="font-[700] w-[auto] text-[36px] mb-[20px] text-black ">
+          <div className="max-w-[100%]  md:max-w-[500px]   ">
+            <p className="font-[700] w-full text-[36px] mb-[20px] text-black ">
               Have You Any Project? Please Drop a Message
             </p>
             <p className="mb-[36px] text-grey-light">

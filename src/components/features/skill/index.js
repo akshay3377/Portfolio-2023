@@ -120,7 +120,7 @@ const SkillSection = () => {
   const handleSelect = (id) => setSelectedDiv(id);
 
   return (
-    <section className=" w-[100%] py-[100px]">
+    <section className=" w-[100%] py-[50px]">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -141,8 +141,8 @@ const SkillSection = () => {
             },
           }}
         >
-          <div className="w-[75%] mx-auto flex flex-col my-[36px]  md:flex-row justify-around  ">
-            <div className=" w-[100%]  md:w-[40%]">
+          <div className="max-w-[1200px] mx-auto flex flex-col my-[36px]  p-4  md:flex-row justify-around  ">
+            <div className=" max-w-[100%]  md:max-w-[40%]">
               <h1 className="font-[700] text-[36px] text-black mb-[12px]">
                 What My Programming Skills Included?
               </h1>

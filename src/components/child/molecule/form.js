@@ -64,7 +64,7 @@ const ContactForm = ({ setState }) => {
         icon={<UserIcon />}
         label={"Name"}
         placeholder={"Enter your name"}
-        register={register("name", { required: "Name is required" })}
+        register={register("name", { required: "*Name is required" })}
         errors={errors}
       />
 
@@ -75,9 +75,9 @@ const ContactForm = ({ setState }) => {
         placeholder={"Enter your email"}
         type="text"
         register={register("email", {
-          required: "Email is required",
+          required: "*Email is required",
           pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
             message: "Invalid email address",
           },
         })}
@@ -91,7 +91,7 @@ const ContactForm = ({ setState }) => {
         placeholder={"Enter Phone number"}
         type="text"
         register={register("phone", {
-          required: "phone  is required",
+          required: "*phone  is required",
           minLength: { value: 10, message: "min length should be 10" },
           maxLength: { value: 10, message: "max length should be 10" },
         })}
