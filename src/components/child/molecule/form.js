@@ -27,21 +27,19 @@ const ContactForm = ({ setState }) => {
     formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
-  const onSubmit = async (payload, e) => {
+  const onSubmit = async (userData, e) => {
     setIsLoading(true);
     setState((previous) => !previous);
     try {
-      const firebase = await addDoc(
-        collection(databaseConnection, "response"),
-        { ...payload }
-      );
-
-      const Email = await emailjs.sendForm(
-        "service_629f2nm",
-        "template_m1vpz6t",
-        e.target,
-        "vKKoec85US-oDv-uP"
-      );
+      const [firebase, Email] = await Promise.all([
+        addDoc(collection(databaseConnection, "response"), { ...userData }),
+        emailjs.sendForm(
+          "service_629f2nm",
+          "template_m1vpz6t",
+          e.target,
+          "vKKoec85US-oDv-uP"
+        ),
+      ]);
 
       toast.success("Response sent successfully");
       reset();

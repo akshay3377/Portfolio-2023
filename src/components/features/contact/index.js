@@ -88,45 +88,47 @@ const ContactSection = () => {
             },
           }}
           className={
-            "max-w-[1200px]  flex  flex-col    justify-around p-4  md:flex-row   mx-auto"
+            "max-w-[1200px]  flex  flex-col  justify-around p-4  md:flex-row   mx-auto"
           }
         >
-          <div className="max-w-[100%]  md:max-w-[500px]   ">
-            <p className="font-[700] w-full text-[36px] mb-[20px] text-black ">
-              Have You Any Project? Please Drop a Message
-            </p>
-            <p className="mb-[36px] text-grey-light">
-              Get in touch and let me know how i can help. Fill out the form and
-              i'll be in touch as soon as possible.
-            </p>
+          <div className="max-w-[100%]  md:max-w-[500px]  flex justify-center items-center  ">
+            <div>
+              <p className="font-[700] w-full text-[36px] mb-[20px] text-black ">
+                Have You Any Project? Please Drop a Message
+              </p>
+              <p className="mb-[36px] text-grey-light">
+                Get in touch and let me know how i can help. Fill out the form
+                and i'll be in touch as soon as possible.
+              </p>
 
-            {CONTACT.map((contact, index) => {
-              return (
-                <div key={index} className="mb-[22px] flex">
-                  <div className="mr-[18px]"> {<contact.icon />}</div>
-                  <ul>
-                    <h3 className="font-[700] text-black">{contact.title}</h3>
-                    <li className="text-grey-light text-[14px]">
-                      {contact.discription}
-                    </li>
-                  </ul>
-                </div>
-              );
-            })}
-
-            <div className="flex gap-3 my-[46px]">
-              {SOCIAL_LINKS.map((social, index) => {
+              {CONTACT.map((contact, index) => {
                 return (
-                  <a
-                    className=" bg-[white]  h-[40px] w-[40px] flex justify-center items-center rounded-[50%] shadow-2xl"
-                    href={social.link}
-                    target="_blank"
-                    key={index}
-                  >
-                    {<social.icon className="h-[30px] w-[30px]" />}
-                  </a>
+                  <div key={index} className="mb-[16px] flex">
+                    <div className="mr-[18px]"> {<contact.icon />}</div>
+                    <ul>
+                      <h3 className="font-[700] text-black">{contact.title}</h3>
+                      <li className="text-grey-light text-[14px]">
+                        {contact.discription}
+                      </li>
+                    </ul>
+                  </div>
                 );
               })}
+
+              <div className="flex gap-3 my-[46px]">
+                {SOCIAL_LINKS.map((social, index) => {
+                  return (
+                    <a
+                      className=" bg-[white]  h-[40px] w-[40px] flex justify-center items-center rounded-[50%] shadow-2xl"
+                      href={social.link}
+                      target="_blank"
+                      key={index}
+                    >
+                      {<social.icon className="h-[30px] w-[30px]" />}
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div className=" w-[100%]  md:max-w-[500px]  bg-white flex justify-center items-center py-[24px] my-[20px]">
