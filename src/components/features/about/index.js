@@ -55,7 +55,7 @@ const AboutSection = () => {
               About me, What My Programming skills.
             </h1>
             <p className="mb-[32px] leading-[36px] text-grey-light">
-              <strong className="text-black">Fontend developer</strong> with 2
+              <strong className="text-black">Fontend developer</strong> with 1
               years of experience in Building projects using JavaScript, React
               js, Next js, RESTful API, Redux and Firebase. I have worked on
               various web development project's with hands-on experience in
@@ -70,7 +70,6 @@ const AboutSection = () => {
           </div>
         </motion.div>
       </motion.div>
-
       <div className="flex flex-wrap gap-5 w-[75%] justify-center items-center my-[100px] mx-auto ">
         <LiveCounter Color={"green"} target={"7"} label={"Total Projects"} />
         <LiveCounter Color={"red"} target={"2"} label={"Work Experience"} />

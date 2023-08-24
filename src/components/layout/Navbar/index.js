@@ -34,14 +34,8 @@ const Navbar = () => {
   const pathName = usePathname();
 
   const [scrolled, setScrolled] = useState(false);
-
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
+  const handleScroll = () =>
+    window.scrollY > 0 ? setScrolled(true) : setScrolled(false);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -53,7 +47,7 @@ const Navbar = () => {
   return (
     <nav
       className={` ${
-        scrolled ? "shadow-lg" : ""
+        scrolled && "shadow-lg"
       } bg-grey sticky top-0 z-50 w-[100%]`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
