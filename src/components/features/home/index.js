@@ -20,7 +20,7 @@ const HomeSection = () => {
   };
 
   return (
-    <section className=" w-full py-[100px]  ">
+    <section className=" w-full py-[100px] ">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

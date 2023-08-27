@@ -40,7 +40,6 @@ const ContactForm = ({ setState }) => {
           "vKKoec85US-oDv-uP"
         ),
       ]);
-
       toast.success("Response sent successfully");
       reset();
     } catch (error) {
