@@ -23,6 +23,10 @@ const NAV_LINKS = [
     route: "/portfolio",
   },
   {
+    title: "Chat",
+    route: "/chat",
+  },
+  {
     title: "Contact",
     route: "/contact",
   },
@@ -63,10 +67,8 @@ const Navbar = () => {
                 return (
                   <li
                     key={index}
-                    className={`px-[10px] py-[4px] mx-[12px]  rounded-md  ${
-                      navlink.route === pathName
-                        ? "text-[black] font-[800]"
-                        : "text-[#999797] font-[400]"
+                    className={`px-[10px] py-[4px] mx-[12px]  rounded-md text-[#999797]  ${
+                      navlink.route === pathName && "text-[black] underline "
                     } hover:text-[black]    `}
                   >
                     <Link href={navlink.route}>{navlink.title}</Link>
