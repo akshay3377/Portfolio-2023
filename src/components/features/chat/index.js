@@ -1,21 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
-import ChatRoom from "@/components/features/chat/chatRoom";
-import JoinChatRoom from "@/components/features/chat/joinChatRoom";
+import ChatRoom from "./ChatRoom";
+import JoinChatRoom from "./JoinChatRoom";
 
-const App = () => {
-  const [roomID, setRoomID] = useState("");
-  const handleJoin = (roomID) => setRoomID(roomID);
+const ChatSection = () => {
+  const [user, setUser] = useState(null);
+  const handleJoin = (value) => setUser(value);
 
   return (
-    <section className="w-full  py-[100px]">
+    <section className="w-full py-[80px]">
       <div className="max-w-[1200px] mx-auto">
-        <h1 className="font-[700] text-[36px] mb-[16px]">
+        <h1 className="font-[700] text-[26px] mb-[16px]">
           Chat with your friend...
         </h1>
-        {roomID ? (
-          <ChatRoom roomID={roomID} />
+        {user?.roomId && user?.name ? (
+          <ChatRoom user={user} />
         ) : (
           <JoinChatRoom onJoin={handleJoin} />
         )}
@@ -24,4 +24,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ChatSection;

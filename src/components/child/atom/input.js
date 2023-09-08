@@ -16,7 +16,7 @@ const InputField = ({
   const showError = errors && errors[name];
 
   return (
-    <div className="mb-[28px]">
+    <div className="mb-[28px] w-full">
       <small className="font-semibold inline-block mb-[8px]">{label}</small>
       <div
         className={`relative  ${className} bg-grey ${
@@ -25,6 +25,7 @@ const InputField = ({
       >
         <span className="mr-2 ">{icon}</span>
         <input
+          name={name}
           onInput={onInput}
           onChange={onchange}
           id={name}

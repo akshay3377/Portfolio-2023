@@ -70,11 +70,8 @@ const AboutSection = () => {
           </div>
         </motion.div>
       </motion.div>
-      <div className="flex flex-wrap gap-5 w-[75%] justify-center items-center my-[100px] mx-auto ">
-        <LiveCounter Color={"green"} target={"7"} label={"Total Projects"} />
-        <LiveCounter Color={"red"} target={"2"} label={"Work Experience"} />
-        <LiveCounter Color={"blue"} target={"2"} label={"Cleint Servered"} />
-      </div>
+
+      {/* <LiveCounter Color={"blue"} target={"2"} label={"Cleint Servered"} /> */}
     </section>
   );
 };

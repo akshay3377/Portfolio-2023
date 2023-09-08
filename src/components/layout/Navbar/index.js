@@ -62,13 +62,13 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden md:block">
-            <ul className="ml-10 flex items-baseline space-x-4">
+            <ul className=" flex items-baseline space-x-6">
               {NAV_LINKS.map((navlink, index) => {
                 return (
                   <li
                     key={index}
-                    className={`px-[10px] py-[4px] mx-[12px]  rounded-md text-[#999797]  ${
-                      navlink.route === pathName && "text-[black] underline "
+                    className={` py-[4px] mx-[12px]   text-[#999797]   ${
+                      navlink.route === pathName && " text-black border-b-2 border-gray-300 "
                     } hover:text-[black]    `}
                   >
                     <Link href={navlink.route}>{navlink.title}</Link>

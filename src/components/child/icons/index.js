@@ -36,3 +36,6 @@ export { default as MicIcon } from "./MicIcon";
 export { default as LottieIcon } from "./LottieIcon";
 
 export { default as MicPauseIcon } from "./MicPauseIcon";
+
+export { default as SendMessageIcon } from "./SendMessageIcon";
+
