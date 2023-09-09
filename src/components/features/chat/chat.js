@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import ChatRoom from "./ChatRoom";
 import JoinChatRoom from "./JoinChatRoom";
 
