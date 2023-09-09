@@ -1,4 +1,5 @@
-import ChatSection from "@/components/features/chat";
+import ChatSection from "@/components/features/chat/chat";
+
 
 const Chat = () => {
   return <ChatSection />;

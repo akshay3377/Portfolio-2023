@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import InputField from "../../child/atom/input";
 import Button from "../../child/atom/button";

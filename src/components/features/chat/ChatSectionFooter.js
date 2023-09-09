@@ -13,7 +13,7 @@ export default function ChatSectionFooter({
   };
 
   return (
-    <div className="flex  border-t border-[#d3d3d3]    items-center  p-2">
+    <div className="flex border-t border-[#d3d3d3] items-center  p-2">
       <input
         value={message}
         onChange={(e) => {
