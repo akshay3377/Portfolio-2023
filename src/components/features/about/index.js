@@ -4,7 +4,7 @@ import Button from "../../child/atom/button";
 import Link from "next/link";
 import LoadingImage from "@/hooks/loadingImage";
 import { motion } from "framer-motion";
-import LiveCounter from "@/components/child/atom/liveCount";
+// import LiveCounter from "@/components/child/atom/liveCount";
 
 const AboutProfilePic = "/images/me.jpg";
 const LoadingBlurImage = "/images/blur.avif";

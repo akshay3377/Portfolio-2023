@@ -5,7 +5,7 @@ const SendMessageIcon = (props) => (
     height="800px"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    fill="#19C37D"
+    fill="#32CD32"
     stroke="white"
     strokeWidth={1}
     strokeLinecap="round"

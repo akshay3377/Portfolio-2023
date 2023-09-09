@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getDatabase, ref, push, onValue } from "firebase/database";
 import { FirebaseApp } from "../../../../firebaseConfig";
-import { SendMessageIcon } from "@/components/child/icons";
-import moment from "moment";
+import ChatLottiee from "../../../../public/animation/chat.json";
+import ChatSectionFooter from "./ChatSectionFooter";
+import ChatSectionBody from "./ChatSectionBody";
+import Lottie from "react-lottie";
 
 const ChatRoom = ({ user }) => {
   const [message, setMessage] = useState("");
@@ -38,62 +40,47 @@ const ChatRoom = ({ user }) => {
     }
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSendMessage();
-    }
+  const chatContainerRef = useRef(null);
+
+  useEffect(() => {
+    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+  }, [messages]);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: ChatLottiee,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
   };
 
-  const extractTime = (time) => moment(time).format("h:mm A");
-
   return (
-    <div className="bg-white max-w-full">
-      <strong className="inline-block p-6">Room ID : {user.roomId}</strong>
+    <div className="bg-white max-w-full rounded-lg shadow-lg">
+      <strong className="inline-block p-4">Room ID : {user.roomId}</strong>
 
-      <div className=" h-[400px] p-6 flex flex-col border-t border-[#d3d3d3]  w-full overflow-y-scroll no-scrollbar   ">
-        {messages.map((msg, index) => {
-          return (
-            <div
-              key={index}
-              className={`mb-[16px] flex ${
-                msg.name === user.name ? "justify-end" : "justify-start"
-              }`}
-            >
-              <div
-                className={`max-w-[700px]  ${
-                  msg.name === user.name
-                    ? "bg-[black] text-white"
-                    : "bg-[#D3D3D3]  text-black"
-                } p-2 rounded-md`}
-              >
-                {msg.text}
-                <p className="text-right text-[10px] mt-1">
-                  {extractTime(msg.timestamp)}
-                </p>
-              </div>
-            </div>
-          );
-        })}
+      <div
+        ref={chatContainerRef}
+        className=" h-[400px] p-4 flex flex-col border-t border-[#d3d3d3]  w-full no-scrollbar overflow-y-auto "
+      >
+        {messages.length === 0 ? (
+          <div className="max-h-[350px] max-w-[350px] mx-auto">
+            <Lottie options={defaultOptions} className="w-[100%] h-auto" />
+          </div>
+        ) : (
+          <>
+            {messages.map((msg, index) => (
+              <ChatSectionBody index={index} msg={msg} user={user} />
+            ))}
+          </>
+        )}
       </div>
-      <div className="flex shadow-lg border-t border-[#d3d3d3]    items-center  p-2">
-        <input
-          value={message}
-          onChange={(e) => {
-            setMessage(e.target.value);
-          }}
-          onKeyDown={handleKeyPress}
-          type="text"
-          className="flex-grow px-3 py-2 outline-none "
-          placeholder="Type your message..."
-        />
 
-        <button
-          onClick={handleSendMessage}
-          className="ml-2 p-2 bg-[#32CD32]  rounded-lg"
-        >
-          <SendMessageIcon className={`w-[24px] h-[24px] z-50  `} />
-        </button>
-      </div>
+      <ChatSectionFooter
+        message={message}
+        setMessage={setMessage}
+        handleSendMessage={handleSendMessage}
+      />
     </div>
   );
 };

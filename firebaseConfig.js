@@ -12,6 +12,4 @@ const firebaseConfig = {
 
 export const FirebaseApp = initializeApp(firebaseConfig);
 export const databaseConnection = getFirestore(FirebaseApp);
-
-
 // export const postsDB = collection(databaseConnection, "response");
