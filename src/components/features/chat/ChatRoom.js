@@ -8,6 +8,15 @@ import ChatSectionFooter from "./ChatSectionFooter";
 import ChatSectionBody from "./ChatSectionBody";
 import Lottie from "react-lottie";
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: ChatLottiee,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
+
 const ChatRoom = ({ user }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
@@ -15,7 +24,7 @@ const ChatRoom = ({ user }) => {
 
   useEffect(() => {
     const dataBase = getDatabase(FirebaseApp);
-    const chatRef = ref(dataBase, `chatRooms/${user.roomId}/messages`);
+    const chatRef = ref(dataBase, `chat/${user.roomId}/messages`);
     setMessageRef(chatRef);
 
     onValue(chatRef, (snapshot) => {
@@ -48,22 +57,13 @@ const ChatRoom = ({ user }) => {
     chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
   }, [messages]);
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: ChatLottiee,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   return (
     <div className="bg-white max-w-full rounded-lg shadow-lg">
       <strong className="inline-block p-4">Room ID : {user.roomId}</strong>
 
       <div
         ref={chatContainerRef}
-        className=" h-[400px] p-4 flex flex-col border-t border-[#d3d3d3]  w-full no-scrollbar overflow-y-auto "
+        className=" h-[400px] p-4 flex flex-col  border-t border-[#d3d3d3]  w-full no-scrollbar overflow-y-auto "
       >
         {messages.length === 0 ? (
           <div className="max-h-[350px] max-w-[350px] mx-auto">

@@ -16,7 +16,7 @@ const JoinChatRoom = ({ onJoin }) => {
 
   return (
     <div className="bg-white p-4">
-      <div className="flex gap-4">
+      <div className="flex flex-col">
         <InputField
           name={"roomId"}
           className={"rounded-md"}
