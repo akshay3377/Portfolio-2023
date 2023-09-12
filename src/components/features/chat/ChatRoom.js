@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { getDatabase, ref, push, onValue } from "firebase/database";
-import { FirebaseApp } from "../../../../firebaseConfig";
+import { ref, push, onValue } from "firebase/database";
 import ChatLottiee from "../../../../public/animation/chat.json";
 import ChatSectionFooter from "./ChatSectionFooter";
 import ChatSectionBody from "./ChatSectionBody";
 import Lottie from "react-lottie";
+import { realTimeDB } from "../../../../firebaseConfig";
 
 const defaultOptions = {
   loop: true,
@@ -23,8 +23,8 @@ const ChatRoom = ({ user }) => {
   const [messageRef, setMessageRef] = useState(null);
 
   useEffect(() => {
-    const dataBase = getDatabase(FirebaseApp);
-    const chatRef = ref(dataBase, `chat/${user.roomId}/messages`);
+ 
+    const chatRef = ref(realTimeDB, `chat/${user.roomId}/messages`);
     setMessageRef(chatRef);
 
     onValue(chatRef, (snapshot) => {

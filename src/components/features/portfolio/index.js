@@ -147,18 +147,19 @@ const PortfolioSection = () => {
                     },
                   }}
                 >
-                  <div className="max-w-[850px] shadow-2xl rounded-[6px] py-[12px] px-[18px] mb-[86px] mx-auto">
-                    <a href={portfolio.link} target="_blank">
+                  <div className="max-w-[850px] shadow-2xl rounded-[6px] p-[8px] mb-[86px] mx-auto">
+                    <div className="overflow-hidden">
                       <Image
-                        className=" w-[100%] hover:scale-125 transition-all duration-500 cursor-pointer z-50"
+                        className=" w-[100%]  hover:scale-125 transition-all duration-500"
                         src={portfolio?.results?.image}
                         alt={portfolio?.results?.title}
                       />
-                    </a>
+                    </div>
+
                     <a
                       href={portfolio?.results?.link}
                       target="_blank"
-                      className=" inline-block my-[8px] text-blue underline font-[600] text-[16px] "
+                      className=" inline-block  text-blue underline font-[600] text-[16px] mt-2 "
                     >
                       {portfolio?.results?.title}
                     </a>
