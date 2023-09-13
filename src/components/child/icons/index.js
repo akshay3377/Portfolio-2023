@@ -39,3 +39,6 @@ export { default as MicPauseIcon } from "./MicPauseIcon";
 
 export { default as SendMessageIcon } from "./SendMessageIcon";
 
+export { default as RightIcon } from "./RightIcon";
+
+export { default as LeftIcon } from "./LeftIcon";

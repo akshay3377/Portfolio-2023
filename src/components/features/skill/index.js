@@ -159,7 +159,7 @@ const SkillSection = () => {
                         item.id === selectedDiv
                           ? "bg-red text-white font-[700]"
                           : ""
-                      } mr-[4px] `}
+                      } mr-[8px] `}
                       onClick={() => handleSelect(item.id)}
                       key={index}
                     >
@@ -177,9 +177,9 @@ const SkillSection = () => {
                     return (
                       <div
                         key={index}
-                        className="bg-white rounded-[10%] h-[85px] w-[85px] flex justify-center shadow-md items-center"
+                        className="bg-white rounded-[10%] h-[85px] w-[85px] flex justify-center shadow-md items-center transform transition-transform duration-300 cubic-bezier(0.25, 0.46, 0.45, 0.94) hover:-translate-y-2"
                       >
-                        <skill.icon className="w-[70PX] h-[70PX]" />
+                        <skill.icon className="w-[70px] h-[70px]" />
                       </div>
                     );
                   })}

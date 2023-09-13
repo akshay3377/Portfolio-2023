@@ -84,7 +84,7 @@ const PortfolioSection = () => {
           <motion.div
             variants={{
               offscreen: {
-                y: 100,
+                y: 50,
                 opacity: 0,
               },
               onscreen: {

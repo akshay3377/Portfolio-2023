@@ -1,10 +1,6 @@
 import PortfolioSection from "@/components/features/portfolio";
 
 const Portfolio = () => {
-  return (
-    <>
-      <PortfolioSection />
-    </>
-  );
+  return <PortfolioSection />;
 };
 export default Portfolio;

@@ -1,13 +1,13 @@
-import A from "@/components/child/a";
-import ContactSection from "@/components/features/contact";
+import { ContactSection, FAQSection } from "@/components/features/contact";
 
 const Contact = () => {
   return (
-    <>
-      <A />
-
-      {/* <ContactSection /> */}
-    </>
+    <section className="w-[100%]">
+      <div className="max-w-[1200px] mx-auto">
+        <ContactSection />
+        <FAQSection />
+      </div>
+    </section>
   );
 };
 

@@ -23,8 +23,8 @@ const NAV_LINKS = [
     route: "/portfolio",
   },
   {
-    title: "Chat",
-    route: "/chat",
+    title: "Fun",
+    route: "/fun",
   },
   {
     title: "Contact",
