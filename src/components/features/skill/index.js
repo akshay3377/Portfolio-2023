@@ -120,7 +120,7 @@ const SkillSection = () => {
   const handleSelect = (id) => setSelectedDiv(id);
 
   return (
-    <section className=" w-[100%] py-[50px]">
+    <section className=" w-[100%] px-[24px] py-[60px]">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -141,10 +141,10 @@ const SkillSection = () => {
             },
           }}
         >
-          <div className="max-w-[1200px] mx-auto flex flex-col my-[36px]  p-4  md:flex-row justify-around  ">
-            <div className=" max-w-[100%]  md:max-w-[40%]">
-              <h1 className="font-[700] text-[36px] text-black mb-[12px]">
-                What My Programming Skills Included?
+          <div className="max-w-[1200px] mx-auto flex flex-col my-[36px]   md:flex-row justify-around  ">
+            <div className=" max-w-[500px]   ">
+              <h1 className="font-[700] text-[36px] text-black mb-[16px]">
+                My Programming Skills
               </h1>
               <p className="mb-[24px] leading-[32px] text-grey-light">
                 I develop simple, intuitive and responsive user interface that
@@ -170,7 +170,7 @@ const SkillSection = () => {
               </div>
             </div>
 
-            <div className="w-[100%] md:w-[50%] my-[46px] flex flex-wrap  justify-start  md:justify-center items-center gap-4 md:gap-5">
+            <div className="max-w-[600px] my-[46px] flex flex-wrap  justify-start  md:justify-center items-center gap-4 md:gap-5">
               {selectedDiv !== null && (
                 <>
                   {data[selectedDiv - 1].results.map((skill, index) => {

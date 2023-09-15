@@ -1,29 +1,27 @@
 import React from "react";
 import Accordion from "../../child/atom/Accordion";
 
-
 const accordionItems = [
   {
-    title: "Link click",
+    title: "Web development",
     content:
-      "https://preview.themeforest.net/item/trydo-creative-agency-react-template/full_screen_preview/25457315?_ga=2.173570795.999866595.1694636213-1477478124.1694636213",
+      "Web development encompasses the creation and maintenance of websites and web applications. Developers use a combination of coding languages like HTML, CSS, and JavaScript to design and implement the visual and functional aspects of websites. They also work with server-side technologies to handle data processing and user interactions. Web development plays a pivotal role in shaping the digital landscape, ensuring that businesses and individuals can connect, share information, and offer services online. It's a dynamic field that evolves rapidly, with developers continually adapting to new technologies and standards to create responsive, secure, and engaging web experiences.",
   },
   {
-    title: "Accordion Item 2",
+    title: "React js",
     content:
-      "You can be presenting any home page instead of splash page. http://localhost:3000 you can showing any page as your you are like. First you have to go index.js page then:",
+      "React.js is a JavaScript library for building user interfaces. It allows developers to create interactive and reusable UI components for web and mobile applications, making it a popular choice for front-end development.",
   },
   {
-    title: "Accordion Item 3",
+    title: "Next js",
     content:
-      "You can be presenting any home page instead of splash page. http://localhost:3000 you can showing any page as your you are like. First you have to go index.js page then:",
+      "Next.js is a popular JavaScript framework used for building modern web applications. It offers features like server-side rendering, routing, and automatic code splitting, which enhance performance and SEO. Next.js simplifies the development of React applications, making it easier to build fast and scalable websites and web apps.",
   },
 ];
 
 const FAQSection = () => {
   return (
     <div className="w-full">
-     
       <Accordion items={accordionItems} />
     </div>
   );

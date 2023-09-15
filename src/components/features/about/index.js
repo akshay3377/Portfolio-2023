@@ -14,20 +14,15 @@ const AboutTitleData = [
     title: "Main skills",
     details: [
       {
-        title: " Web and user interface design.",
+        title: "User Experience",
         subTitle: "Development",
-        discription: "Websites, web experiences, ...",
+        discription: "Websites, web experiences.",
       },
       {
-        title: " User experience design",
-        subTitle: "UI/UX",
+        title: "User interface design",
+        subTitle: "Designing",
         discription: "Delight the user and make it work.",
       },
-      // {
-      //   title: "Interaction design",
-      //   subTitle: "Animation",
-      //   discription: "I like to move it move it.",
-      // },
     ],
   },
 
@@ -35,16 +30,14 @@ const AboutTitleData = [
     title: "Experience",
     details: [
       {
-        title: "Delight the user and make it work.",
-        subTitle: "Delight the user and make it work.",
-        discription:
-          "User experience design - UI/UX Delight the user and make it work.",
+        title: "Frontend developer",
+        subTitle: "React Js Developer",
+        discription: `2023`,
       },
       {
-        title: "Delight the user and make it work.",
-        subTitle: "Delight the user and make it work.",
-        discription:
-          "User experience design -  Delight the user and make it work.",
+        title: "Frontend developer",
+        subTitle: "Intern",
+        discription: `2022`,
       },
     ],
   },
@@ -52,9 +45,9 @@ const AboutTitleData = [
     title: "Education & Certification",
     details: [
       {
-        title: "BCA",
-        subTitle: "Software engineer",
-        discription: "2021",
+        title: "Bachelor of Computer Applications",
+        subTitle: "Software Engineer",
+        discription: "2018-2021",
       },
       {
         title: "I.T",
@@ -80,7 +73,7 @@ const AboutSection = () => {
   const [src, { blur }] = LoadingImage(LoadingBlurImage, AboutProfilePic);
 
   return (
-    <section className=" w-[100%] py-[100px] ">
+    <section className=" w-full px-[24px] py-[60px]">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -121,10 +114,10 @@ const AboutSection = () => {
           <div className=" max-w-[650px] p-4  my-[36px] ">
             <h1 className="font-[700] text-[36px] mb-[16px]">About Me</h1>
             <p className="mb-[32px] leading-[32px] text-[#717173]">
-              As a frontend developer, I specialize in creating visually
-              appealing and user-friendly interfaces for websites and web
-              applications. My expertise lies in crafting clean and engaging
-              user interfaces that enhance the overall user experience.
+              Front-End developer, I specialize in creating visually appealing
+              and user-friendly interfaces for websites and web applications. My
+              expertise lies in crafting clean and engaging user interfaces that
+              enhance the overall user experience.
             </p>
             <div className="flex flex-wrap ">
               {AboutTitle.map((title, index) => {
@@ -159,9 +152,12 @@ const AboutSection = () => {
                 return (
                   <div className="mb-[16px]">
                     <p className="text-[16px]  font-[500]  leading-[36px]">
-                      {item.title} - <span className=" text-[#717173]">{item.subTitle}</span>{" "}
+                      {item.title} -{" "}
+                      <span className=" text-[#717173]">{item.subTitle}</span>{" "}
                     </p>
-                    <p className="leading-[36px]  text-[#717173]">{item.discription}</p>
+                    <p className="leading-[36px]  text-[#717173]">
+                      {item.discription}
+                    </p>
                   </div>
                 );
               })}
@@ -174,10 +170,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-
-// I have worked on
-//               various web development project's with hands-on experience in
-//               frontend technologies. such as HTML, CSS, and JavaScript, as well
-//               as frameworks like React and Next, to build scalable and modular
-//               applications, crafting clean and semantically structured code to
-//               develop visually appealing and interactive user interfaces.

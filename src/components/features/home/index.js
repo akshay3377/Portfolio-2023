@@ -20,7 +20,7 @@ const HomeSection = () => {
   };
 
   return (
-    <section className=" w-full py-[100px] ">
+    <section className=" w-full px-[24px] py-[60px] ">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -41,7 +41,7 @@ const HomeSection = () => {
             },
           }}
         >
-          <div className="max-w-[1200px] flex flex-col  lg:flex-row justify-around items-center mx-auto">
+          <div className="max-w-[1200px] flex flex-col  lg:flex-row justify-around items-center mx-auto ">
             <div className=" max-w-[500px]">
               <div className="  flex justify-center items-center">
                 <div className=" h-[300px] md:h-[400px]">

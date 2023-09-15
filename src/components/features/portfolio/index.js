@@ -13,58 +13,56 @@ import Button from "@/components/child/atom/button";
 const DATA = [
   {
     value: "Designing",
-    results: {
-      title: "Food order website UI",
-      image: work3,
-      link: "https://food-app-xi-fawn.vercel.app/",
-    },
-  },
-  {
-    value: "Designing",
-    results: {
-      title: "3D website UI",
-      image: work4,
-      link: "https://3-d-app-akshaysaga777.vercel.app/",
-    },
-  },
-  {
-    value: "Designing",
-    results: {
-      title: "Tourism website UI",
-      image: work5,
-      link: "https://tourism-app-rho.vercel.app/",
-    },
+    results: [
+      {
+        title: "Food order website UI",
+        image: work3,
+        link: "https://food-app-xi-fawn.vercel.app/",
+      },
+      {
+        title: "3D website UI",
+        image: work4,
+        link: "https://3-d-app-akshaysaga777.vercel.app/",
+      },
+      {
+        title: "Tourism website UI",
+        image: work5,
+        link: "https://tourism-app-rho.vercel.app/",
+      },
+    ],
   },
 
   {
     value: "Functionality",
-    results: {
-      title: "Mate Cinema",
-      image: work2,
-      link: "https://matecinema.jbrocksfellas.com/",
-    },
+    results: [
+      {
+        title: "Mate Cinema",
+        image: work2,
+        link: "https://matecinema.jbrocksfellas.com/",
+      },
+    ],
   },
   {
     id: 5,
     value: "Authentication",
-    results: {
-      title: "Instagram Clone",
-      image: work1,
-      link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
-    },
+    results: [
+      {
+        title: "Instagram Clone",
+        image: work1,
+        link: "https://instagram-clone-irjb.vercel.app/?vercelToolbarCode=jrcV5XOTFKC6VBr",
+      },
+    ],
   },
 ];
 
-const uniqueObjects = ["Designing", "Functionality", "Authentication"];
-
 const PortfolioSection = () => {
-  const [portfolioType, setPortfolioType] = useState(DATA);
-  const [selectedOption, setSelectedOption] = useState(uniqueObjects[0]);
+  const [portfolioType, setPortfolioType] = useState(DATA[0].results);
+  const [selectedOption, setSelectedOption] = useState(DATA[0].value);
 
   const handleRadioChange = (option) => {
     setSelectedOption(option);
     if (option) {
-      const find = DATA.filter((item) => item.value === option);
+      const find = DATA.find((item) => item.value === option)?.results;
       setPortfolioType(find);
     }
   };
@@ -96,21 +94,19 @@ const PortfolioSection = () => {
               See My Works Which Will Amaze You!
             </h1>
 
-
-
-            <div className=" mx-auto flex flex-wrap justify-center  items-center  max-w-[600px] bg-[rgba(255,26,80,.03)]  gap-6 mb-[60px] ">
-              {uniqueObjects.map((item, index) => {
+            <div className=" mx-auto flex flex-wrap justify-center  items-center  max-w-[600px] bg-[rgba(255,26,80,.03)]  gap-6 mb-[80px] ">
+              {DATA.map((item, index) => {
                 return (
                   <span
                     className={`p-4   cursor-pointer ${
-                      selectedOption === item ? "border-b-2 text-red" : ""
+                      selectedOption === item.value ? "border-b-2 text-red" : ""
                     }  `}
                     key={index}
                     onClick={() => {
-                      handleRadioChange(item);
+                      handleRadioChange(item.value);
                     }}
                   >
-                    {item}
+                    {item.value}
                   </span>
                 );
               })}
@@ -141,20 +137,22 @@ const PortfolioSection = () => {
                     },
                   }}
                 >
-                  <a href={portfolio?.results?.link} target="_blank">
+                  <a href={portfolio?.link} target="_blank">
                     <div className=" group relative shadow-lg    mx-auto hover:scale-105 transition-all duration-500">
                       {/* <div className="overflow-hidden"> */}
                       <Image
                         className=" w-[100%]  "
-                        src={portfolio?.results?.image}
-                        alt={portfolio?.results?.title}
+                        src={portfolio?.image}
+                        alt={portfolio?.title}
                       />
                       {/* </div> */}
 
-                      <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 ">
-                        <div className="flex justify-center items-center flex-col">
+                      <div className="absolute inset-0  bg-black opacity-0 hover:opacity-70  transition-opacity duration-300  text-white flex flex-col justify-end ">
+                        <div className="flex justify-center  text-center items-center flex-col my-[36px]">
                           <p>{portfolio?.value}</p>
-                          <p className="text-[36px] font-[700] text-white">{portfolio?.results?.title}</p>
+                          <p className="text-[36px] font-[700] ">
+                            {portfolio?.title}
+                          </p>
                           <Button children={`View`} />
                         </div>
                       </div>
@@ -171,17 +169,3 @@ const PortfolioSection = () => {
 };
 
 export default PortfolioSection;
-
-{
-  /* <div className="group relative">
-              <Image
-                src={work3}
-                alt="Your Image"
-                className="w-full h-[400px]"
-              />
-
-              <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 z-50 text-white">
-                <Button children={"aksh"} />
-              </div>
-            </div> */
-}
