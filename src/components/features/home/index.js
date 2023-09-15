@@ -41,20 +41,20 @@ const HomeSection = () => {
             },
           }}
         >
-          <div className="w-[75%] flex flex-col  md:flex-row justify-around items-center mx-auto">
-            <div className=" w-[90%]  md:max-w-[450px]">
+          <div className="max-w-[1200px] flex flex-col  lg:flex-row justify-around items-center mx-auto">
+            <div className=" max-w-[500px]">
               <div className="  flex justify-center items-center">
                 <div className=" h-[300px] md:h-[400px]">
                   <Lottie options={defaultOptions} className="w-[100%]" />
                 </div>
               </div>
             </div>
-            <div className=" w-[90%]  md:max-w-[600px] py-[36px]">
+            <div className=" max-w-[650px] p-4">
               <AudioPlayer src={"/audio/bio.mp3"} />
               <h1 className="font-[800] text-[24px] md:text-[52px] ">
                 {admin}
               </h1>
-              <p className="mb-[16px] w-full leading-[32px] text-grey-light">
+              <p className="mb-[16px]  leading-[32px] text-grey-light">
                 FRONT-END DEVELOPER with creative designing & developing skills.
               </p>
               <Link href={"/contact"}>
