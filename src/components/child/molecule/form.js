@@ -4,7 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import Button from "../atom/button";
 import InputField from "../atom/input";
 import TextField from "../atom/textarea";
-import emailjs from "@emailjs/browser";
+
 import {
   EmailIcon,
   PhoneIcon,
@@ -33,13 +33,24 @@ const ContactForm = ({ setState }) => {
     try {
       const [firebase, Email] = await Promise.all([
         addDoc(collection(databaseConnection, "response"), { ...userData }),
-        emailjs.sendForm(
-          "service_629f2nm",
-          "template_m1vpz6t",
-          e.target,
-          "vKKoec85US-oDv-uP"
-        ),
+        fetch("http://localhost:3000/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ...userData }),
+        }),
+
+        // emailjs.sendForm(
+        //   "service_629f2nm",
+        //   "template_m1vpz6t",
+        //   e.target,
+        //   "vKKoec85US-oDv-uP"
+        // ),
       ]);
+
+      const responseData = await Email.json();
+      console.log(responseData);
       toast.success("Response sent successfully");
       reset();
     } catch (error) {

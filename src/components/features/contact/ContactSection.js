@@ -21,24 +21,13 @@ const CONTACT = [
     discription: "chandigarh, India",
   },
   {
-    title: "Phone",
-    icon: PhoneIcon,
-    discription: "+91 8360395467",
-  },
-  {
     title: "Email",
     icon: EmailIcon,
-    discription: "akshaykumar13147@gmail.com",
+    discription: "workwithakshay777@gmail.com",
   },
 ];
 
 export const SOCIAL_LINKS = [
-  {
-    title: "Whatsapp",
-    icon: WhatsappIcon,
-    link: "https://api.whatsapp.com/send?phone=918360395467",
-    customBgColor: "bg-[green]",
-  },
   {
     title: "LinkedIn",
     icon: LinkedinIcon,

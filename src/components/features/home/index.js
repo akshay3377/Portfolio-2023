@@ -44,8 +44,8 @@ const HomeSection = () => {
           <div className="max-w-[1200px] flex flex-col  lg:flex-row justify-around items-center mx-auto ">
             <div className=" max-w-[500px]">
               <div className="  flex justify-center items-center">
-                <div className=" h-[300px] md:h-[400px]">
-                  <Lottie options={defaultOptions} className="w-[100%]" />
+                <div  className=" h-[300px] md:h-[400px]">
+                  <Lottie style={{ pointerEvents: 'none' }} options={defaultOptions} className="w-[100%]" />
                 </div>
               </div>
             </div>
