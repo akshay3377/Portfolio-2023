@@ -9,8 +9,3 @@ export const POST = (req) => {
 export const GET = (req) => {
   return NextResponse.json({ message: "This is get api of newsletter" });
 };
-
-
-
-
-

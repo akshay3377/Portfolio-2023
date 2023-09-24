@@ -18,7 +18,7 @@ const AudioPlayer = ({ src }) => {
     <div>
       <audio ref={audioRef} src={src} />
       <button onClick={handlePlayPause}>
-        {isPlaying ? <MicPauseIcon/> : <MicIcon/>}
+        {isPlaying ? <MicPauseIcon /> : <MicIcon />}
       </button>
     </div>
   );

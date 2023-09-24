@@ -6,12 +6,12 @@ import {
   GithubIcon,
   LinkedinIcon,
   LocationIcon,
-  PhoneIcon,
-  WhatsappIcon,
-} from "../../child/icons";
+  // PhoneIcon,
+  // WhatsappIcon,
+} from "../../icons";
 import Giraff from "../../../../public/animation/giraff.json";
 import Lottie from "react-lottie";
-import ContactForm from "@/components/child/molecule/form";
+import ContactForm from "@/components/molecule/form";
 import { motion } from "framer-motion";
 
 const CONTACT = [

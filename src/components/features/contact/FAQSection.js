@@ -1,5 +1,5 @@
 import React from "react";
-import Accordion from "../../child/atom/Accordion";
+import Accordion from "../../atom/Accordion";
 
 const accordionItems = [
   {

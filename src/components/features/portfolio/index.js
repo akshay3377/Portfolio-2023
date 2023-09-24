@@ -8,7 +8,7 @@ import work4 from "../../../../public/images/work4.png";
 import work5 from "../../../../public/images/work5.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Button from "@/components/child/atom/button";
+import Button from "@/components/atom/button";
 
 const DATA = [
   {

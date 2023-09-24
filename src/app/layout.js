@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import MyToast from "@/components/child/atom/toast";
+import MyToast from "@/components/atom/toast";
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({ subsets: ["latin"] });

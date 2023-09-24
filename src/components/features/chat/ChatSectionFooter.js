@@ -1,4 +1,4 @@
-import { SendMessageIcon } from "@/components/child/icons";
+import { SendMessageIcon } from "@/components/icons";
 import React from "react";
 
 export default function ChatSectionFooter({

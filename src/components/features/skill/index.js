@@ -19,10 +19,10 @@ import {
   NodejsIcon,
   MongoDBIcon,
   LottieIcon,
-} from "../../child/icons";
-import FigmaIcon from "../../child/icons/FigmaIcon";
+} from "../../icons";
+import FigmaIcon from "../../icons/FigmaIcon";
 import { motion } from "framer-motion";
-import Button from "@/components/child/atom/button";
+import Button from "@/components/atom/button";
 
 const data = [
   {
