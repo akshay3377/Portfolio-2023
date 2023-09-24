@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import InputField from "../../atom/input";
-import Button from "../../atom/button";
+import InputField from "../../atom/inputField";
+import Button from "../../atom/Button";
 
 const JoinChatRoom = ({ onJoin }) => {
   const [userData, setUserData] = useState({ roomId: "", name: "" });

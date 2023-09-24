@@ -2,7 +2,7 @@ import React from "react";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const MyToast = () => {
+const Toaster = () => {
   return (
     <ToastContainer
       className="sm:w-full md:w-1/2 lg:w-1/3 p-2"
@@ -18,4 +18,4 @@ const MyToast = () => {
   );
 };
 
-export default MyToast;
+export default Toaster;

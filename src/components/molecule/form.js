@@ -1,9 +1,9 @@
 "use client";
 
 import { addDoc, collection } from "firebase/firestore";
-import Button from "../atom/button";
-import InputField from "../atom/input";
-import TextField from "../atom/textarea";
+import Button from "../atom/Button";
+import InputField from "../atom/inputField";
+import TextField from "../atom/textField";
 
 import {
   EmailIcon,

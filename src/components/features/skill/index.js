@@ -22,7 +22,7 @@ import {
 } from "../../icons";
 import FigmaIcon from "../../icons/FigmaIcon";
 import { motion } from "framer-motion";
-import Button from "@/components/atom/button";
+import Button from "@/components/atom/Button";
 
 const data = [
   {

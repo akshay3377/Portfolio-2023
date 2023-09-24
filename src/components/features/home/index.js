@@ -1,11 +1,11 @@
 "use client";
 
-import Button from "../../atom/button";
+import Button from "../../atom/Button";
 import Link from "next/link";
 import Lottie from "react-lottie";
 import BoyAnimation from "../../../../public/animation/boy.json";
 import { motion } from "framer-motion";
-import AudioPlayer from "@/components/atom/play";
+import AudioPlayer from "@/components/atom/audioPlayer";
 
 const HomeSection = () => {
   const admin = "AKSHAY KUMAR";
