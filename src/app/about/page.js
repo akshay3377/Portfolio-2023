@@ -1,11 +1,7 @@
 import AboutSection from "@/components/features/about";
 
 const About = () => {
-  return (
-    <>
-      <AboutSection />
-    </>
-  );
+  return <AboutSection />;
 };
 
 export default About;

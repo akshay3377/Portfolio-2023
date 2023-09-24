@@ -1,6 +1,6 @@
 "use client";
 
-import LoadingImage from "@/hooks/loadingImage";
+import UseLoadingImage from "@/utils/useLoadingImage";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -70,8 +70,6 @@ const AboutSection = () => {
       setData(AboutTitleData.find((item) => item.title === title)?.details);
   };
 
-  const [src, { blur }] = LoadingImage(LoadingBlurImage, AboutProfilePic);
-
   return (
     <section className=" w-full px-[24px] py-[60px]">
       <motion.div
@@ -98,17 +96,11 @@ const AboutSection = () => {
             "max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-around items-center"
           }
         >
-          <div className=" max-w-[500px] flex justify-center items-center  p-4">
-            <img
-              src={src}
-              style={{
-                borderRadius: "62% 38% 64% 36% / 49% 61% 39% 51% ",
-                height: "auto",
-                width: "85%",
-                filter: blur ? "blur(20px)" : "none",
-                transition: blur ? "none" : "filter 0.3s ease-out",
-              }}
-              alt="profile_pic"
+          <div className=" max-w-[450px] flex justify-center items-center  p-4">
+            <UseLoadingImage
+              lowQualitySrc={LoadingBlurImage}
+              highQualitySrc={AboutProfilePic}
+              imageRadius={`62% 38% 64% 36% / 49% 61% 39% 51% `}
             />
           </div>
           <div className=" max-w-[650px] p-4  my-[36px] ">

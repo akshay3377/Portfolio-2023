@@ -67,6 +67,7 @@ const PortfolioSection = () => {
     }
   };
 
+  const LoadingBlurImage = "/images/blur.avif";
   return (
     <section className="w-[100%] px-4 py-[80px]">
       <div className={"max-w-[1200px]  mx-auto"}>
@@ -145,6 +146,10 @@ const PortfolioSection = () => {
                         src={portfolio?.image}
                         alt={portfolio?.title}
                       />
+                      {/* <LoadingImages
+                        lowQualitySrc={LoadingBlurImage}
+                        highQualitySrc={portfolio?.image}
+                      /> */}
                       {/* </div> */}
 
                       <div className="absolute inset-0  bg-black opacity-0 hover:opacity-70  transition-opacity duration-300  text-white flex flex-col justify-end ">
