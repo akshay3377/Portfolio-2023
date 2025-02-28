@@ -7,11 +7,21 @@
 // }
 
 
+// {
+//   "compilerOptions": {
+//     "baseUrl": "./",
+//     "paths": {
+//       "@components/*": ["src/components/*"]
+//     }
+//   }
+// }
+
+
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@/*": ["src/*"]
     }
   }
 }
